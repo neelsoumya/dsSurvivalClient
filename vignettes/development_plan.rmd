@@ -29,13 +29,10 @@ of hazard ratios in DataSHIELD.
 
 All code is available here:
 
-   * https://github.com/neelsoumya/dsBaseClient/tree/absolute_newbie_client
-   
-   * https://github.com/neelsoumya/dsBase/tree/absolute_newbie
-   
-   * https://github.com/neelsoumya/datashield_testing_basic/blob/master/development_plan.rmd
-   
-   * https://github.com/neelsoumya/datashield_testing_basic/blob/master/development_plan.pdf
+   * https://github.com/neelsoumya/dsSurvival
+
+   * https://github.com/neelsoumya/dsSurvivalClient 
+    
    
 
 The computational steps are outlined below. 
@@ -55,6 +52,8 @@ library(survival)
 library(metafor)
 library(ggplot2)
 library(survminer)
+library(dsSurvival)
+library(dsSurvivalClient)
 require('DSI')
 require('DSOpal')
 require('dsBaseClient')
@@ -190,11 +189,11 @@ dsBaseClient::ds.ls()
 * use constructed Surv object in *coxph.SLMA()*
 
 ```
-dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
+dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
                       event = 'EVENT', objectname='surv_object',
                       type='counting')
 
-coxph_model_full <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+coxph_model_full <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
 
 ```
 
@@ -202,9 +201,9 @@ coxph_model_full <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$f
 
 ```
 
-ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$female', 
-                dataName = 'D', 
-                datasources = connections)
+dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$female', 
+                                dataName = 'D', 
+                                datasources = connections)
 
 ```
 
@@ -212,7 +211,7 @@ ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$femal
 
 ```
 
-coxph_model_strata <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age + 
+coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age + 
                           survival::strata(D$female)')
 
 summary(coxph_model_strata)
@@ -223,14 +222,14 @@ summary(coxph_model_strata)
 ```{r, include=FALSE}
 
 # 1. use constructed surv object in coxph
-dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
-coxph_model_full <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+coxph_model_full <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
 
 # 2. use direct inline call
-ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$female', dataName = 'D', datasources = connections)
+dsSurvivalClient::ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age+D$female', dataName = 'D', datasources = connections)
 
 # 3. Call with strata()
-coxph_model_strata <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+survival::strata(D$female)')
+coxph_model_strata <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+survival::strata(D$female)')
 summary(coxph_model_strata)
 
 ```
@@ -244,7 +243,7 @@ summary of the server-side object. An example call is shown below:
 
 ```
 
-dsBaseClient::ds.summary(x = 'surv_object')
+dsSurvivalClient::ds.summary(x = 'surv_object')
 
 ```
 
@@ -255,9 +254,10 @@ dsBaseClient::ds.summary(x = 'surv_object')
 #################################
 # summary of coxphSLMA
 #################################
-dsBaseClient::ds.summary(x = 'surv_object')
-dsBaseClient::ds.class(x = 'surv_object')
-dsBaseClient::ds.mean(x='surv_object')
+# TODO:
+# dsBaseClient::ds.summary(x = 'surv_object')
+# dsBaseClient::ds.class(x = 'surv_object')
+# dsBaseClient::ds.mean(x='surv_object')
 
 
 #################################
@@ -301,12 +301,12 @@ We have also created functions to test for the assumptions of
 Cox proportional hazards models.
 
 ```
-dsBaseClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female',
+dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female',
                             objectname = 'coxph_serverside')
 
-dsBaseClient::ds.cox.zphSLMA(fit = 'coxph_serverside')
+dsSurvivalClient::ds.cox.zphSLMA(fit = 'coxph_serverside')
 
-dsBaseClient::ds.coxphSummary(x = 'coxph_serverside')
+dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 ```
 
@@ -314,11 +314,11 @@ A diagnostic summary is shown below.
 
 ```{r, echo=FALSE}
 
-dsBaseClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female', objectname = 'coxph_serverside')
+dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~D$age+D$female', objectname = 'coxph_serverside')
 
-dsBaseClient::ds.cox.zphSLMA(fit = 'coxph_serverside')
+dsSurvivalClient::ds.cox.zphSLMA(fit = 'coxph_serverside')
 
-dsBaseClient::ds.coxphSummary(x = 'coxph_serverside')
+dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 
 ```
 
@@ -383,9 +383,9 @@ We also plot privacy preserving survival curves.
 ```
 
 
-dsBaseClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
 
-dsBaseClient::ds.plotsurvfit(formula = 'survfit_object')
+dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
 
 
 ```
@@ -393,7 +393,8 @@ dsBaseClient::ds.plotsurvfit(formula = 'survfit_object')
 
 ```{r, echo = FALSE}
 
-dsBaseClient::ds.plotsurvfit(formula = 'survfit_object')
+# TODO:
+# dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
 
 ```
 
