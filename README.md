@@ -20,6 +20,12 @@ devtools::install_github('neelsoumya/dsSurvival')
 
 devtools::install_github('neelsoumya/dsSurvivalClient')
 
+
+devtools::install_github('neelsoumya/dsBaseClient')
+	
+devtools::install_github('neelsoumya/dsBase')
+	
+
 ```
 
 * Usage:
