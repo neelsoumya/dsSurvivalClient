@@ -26,6 +26,11 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
     * see vignettes   
 
+    * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
+
+    * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
+
+
 * Contact
 
     * Soumya Banerjee, Tom Bishop and DataSHIELD technical team
