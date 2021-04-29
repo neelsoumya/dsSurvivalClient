@@ -284,7 +284,7 @@ dsSurvivalClient::ds.summary(x = 'surv_object')
 #               fit_model <- survival::survfit(coxph_model, newdata = 'D')
 #               return (fit_model)
 
-dsBaseClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+# TODO: dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
 # verify that object has been created
 dsBaseClient::ds.ls()
 
