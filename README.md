@@ -8,6 +8,24 @@ This is a standalone bolt on package for survival analysis in DataSHIELD.
 
     * https://github.com/neelsoumya/dsSurvival
 
+* Installation
+
+```
+
+install.packages('devtools')
+
+library(devtools)
+
+devtools::install_github('neelsoumya/dsSurvival')
+
+devtools::install_github('neelsoumya/dsSurvivalClient')
+
+```
+
+* Usage:
+
+    * see vignettes   
+
 * Contact
 
     * Soumya Banerjee, Tom Bishop and DataSHIELD technical team
