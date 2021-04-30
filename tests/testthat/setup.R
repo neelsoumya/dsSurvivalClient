@@ -20,6 +20,15 @@ library(DescTools)
 library(DSOpal)
 library(DSLite)
 
+library(devtools)
+library(testthat)
+library(dsBase)
+library(dsBaseClient)
+require('DSI')
+require('DSOpal')
+
+
+
 source("dstest_functions/ds_expect_variables.R")
 source("connection_to_datasets/login_details.R")
 source("connection_to_datasets/init_testing_datasets.R")
