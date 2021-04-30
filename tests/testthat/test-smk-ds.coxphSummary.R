@@ -48,7 +48,7 @@ test_that("simple error,wrong formula", {
     #try( cox_object <- ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age.60')#, dataName = 'D') 
     #, silent = FALSE)
     
-    dsSurvClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+    dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
     #try(
     # cox_object <- ds.coxph.SLMA(formula = 'surv_object~AGE')#, dataName = 'D')
     #, silent=FALSE)
@@ -63,7 +63,7 @@ test_that("simple error,wrong formula", {
     # expect_error( as.character(  ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age', dataName = 'D')   ) )
     
     # wrong formula
-    expect_error( as.character(  dsSurvClient::ds.coxphSLMAassign(formula = 'survival::Surv(time=SURVTIME,event=EVENT)=D$age', dataName = 'D', objectname = 'surv_server')   ) )
+    expect_error( as.character(  dsSurvivalClient::ds.coxphSLMAassign(formula = 'survival::Surv(time=SURVTIME,event=EVENT)=D$age', dataName = 'D', objectname = 'surv_server')   ) )
     
 })
 
@@ -72,13 +72,13 @@ test_that("simple error,wrong formula", {
 context("ds.coxphSummary::smk")
 test_that("simple test, checking coefficients of diagnostics", {
         
-    dsSurvClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+    dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
     
-    dsSurvClient::ds.coxphSLMAassign(formula = 'surv_object~AGE', objectname = 'cox_object_serverside')
+    dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object~AGE', objectname = 'cox_object_serverside')
     
-    dsSurvClient::ds.cox.zphSLMA(fit = 'cox_object_serverside')
+    dsSurvivalClient::ds.cox.zphSLMA(fit = 'cox_object_serverside')
     
-    dsSurvClient::ds.coxphSummary(x = 'cox_object_serverside')
+    dsSurvivalClient::ds.coxphSummary(x = 'cox_object_serverside')
     
     # expect_equal(coxph_model_full$survival1$coefficients[1], 0.0387, tolerance = 0.0001)
     
