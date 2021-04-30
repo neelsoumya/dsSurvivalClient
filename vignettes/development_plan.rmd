@@ -383,7 +383,7 @@ metafor::forest.rma(x = meta_model)
 # TODO: 
 # Plotting of privacy-preserving survival curves
 
-We also plot privacy preserving survival curves.
+# We also plot privacy preserving survival curves.
 
 #```
 
