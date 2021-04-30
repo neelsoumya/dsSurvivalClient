@@ -48,10 +48,10 @@ test_that("simple error, setting up survfit but no summary allowed", {
     #try( cox_object <- ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age.60')#, dataName = 'D') 
     #, silent = FALSE)
     
-    dsSurvClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+    dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
     #try(
     
-    cox_object <- dsSurvClient::ds.coxph.SLMA(formula = 'surv_object~AGE')#, dataName = 'D')
+    cox_object <- dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~AGE')#, dataName = 'D')
     
     #, silent=FALSE)
     # print(cox_object$study1$call)
