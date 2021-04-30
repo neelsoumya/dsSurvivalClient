@@ -65,7 +65,7 @@ test_that("simple error, setting up survfit but no summary allowed", {
     # expect_error( as.character(  ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age', dataName = 'D')   ) )
     
     # create survfit object
-    dsSurvivalClient::ds.survfit(formula = 'surv_object~1', objectname = 'survfit_object')
+    # dsSurvivalClient::ds.survfit(formula = 'surv_object~1', objectname = 'survfit_object')
     
     # no summary of survfit object allowed
     # expect_error( as.character(  ds.summary(x = 'survfit_object')   ) )
