@@ -48,7 +48,7 @@ test_that("simple error,wrong formula", {
     #try( cox_object <- ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age.60')#, dataName = 'D') 
     #, silent = FALSE)
     
-    dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+    dsSurvClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
     #try(
     # cox_object <- ds.coxph.SLMA(formula = 'surv_object~AGE')#, dataName = 'D')
     #, silent=FALSE)
@@ -63,7 +63,7 @@ test_that("simple error,wrong formula", {
     # expect_error( as.character(  ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age', dataName = 'D')   ) )
     
     # wrong formula
-    expect_error( as.character(  ds.coxphSLMAassign(formula = 'survival::Surv(time=SURVTIME,event=EVENT)=D$age', dataName = 'D', objectname = 'surv_server')   ) )
+    expect_error( as.character(  dsSurvClient::ds.coxphSLMAassign(formula = 'survival::Surv(time=SURVTIME,event=EVENT)=D$age', dataName = 'D', objectname = 'surv_server')   ) )
     
 })
 
@@ -74,7 +74,7 @@ test_that("simple equal test, checking coefficients", {
     #try( cox_object <- ds.coxph.SLMA(formula = 'survival::Surv(time=SURVTIME,event=EVENT)~D$age.60')#, dataName = 'D') 
     #, silent = FALSE)
     
-    dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+    dsSurvClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
     #try(
     # cox_object <- ds.coxph.SLMA(formula = 'surv_object~AGE')#, dataName = 'D')
     #, silent=FALSE)
@@ -86,7 +86,7 @@ test_that("simple equal test, checking coefficients", {
     
     # summary(cox_object)
     
-    coxph_model_full <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~AGE')
+    coxph_model_full <- dsSurvClient::ds.coxph.SLMA(formula = 'surv_object~AGE')
     cat("Model coeff")
     cat(coxph_model_full$survival1$coefficients[1])
     # print(summary(coxph_model_full))
@@ -103,9 +103,9 @@ test_that("simple equal test, checking coefficients", {
 context("ds.coxphSLMAassign::smk")
 test_that("summary of Cox model, error since only summary of survival object allowed", {
     
-    surv_object <- dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
+    surv_object <- dsSurvClient::ds.Surv(time='STARTTIME', time2='ENDTIME', event = 'EVENT', objectname='surv_object', type='counting')
     
-    coxph_model_full <- dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~AGE')
+    coxph_model_full <- dsSurvClient::ds.coxph.SLMA(formula = 'surv_object~AGE')
     
     expect_error(as.character(ds.summary(x='coxph_model_full')) )
     
