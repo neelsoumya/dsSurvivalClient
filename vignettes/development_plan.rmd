@@ -1,7 +1,7 @@
 ---
 title: "Meta-analysis of survival models in the DataSHIELD platform"
 author: "Soumya Banerjee, Tom Bishop and DataSHIELD technical team "
-date: "28 April 2021"
+date: "30 April 2021"
 output:
   pdf_document:
     toc: yes
@@ -376,22 +376,25 @@ metafor::forest.rma(x = meta_model)
 
 ```    
 
+
+
+```{r, echo = FALSE}
+
+# TODO: 
 # Plotting of privacy-preserving survival curves
 
 We also plot privacy preserving survival curves.
 
-```
+#```
 
 
-dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+#dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
 
-dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
-
-
-```
+#dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
 
 
-```{r, echo = FALSE}
+#```
+
 
 # TODO:
 # dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
@@ -428,95 +431,6 @@ We also present privacy preserving summaries of Cox models and survival objects.
 
 An issue that needs further discussion is how to deal with strata in Cox models. It may be desirable to disallow Cox models with a strata that has less than a specified number of patients (for example 10).
 
-## Relevant work for ensuring survival models are privacy preserving
-
-We briefly outline some relevant work for ensuring survival models are privacy preserving. One work reduces the dimensions of a survival model and the reduced feature space model is then shared amongst multiple parties.
-
-  * https://people.csail.mit.edu/romer/papers/PPCox_KDD08.pdf
-  
-
-# Development plan for additional functions
-
-We now outline additional functionalities that can be implemented. We envisage rolling these out in phased releases.
-
-
-
-## Plotting diagnostics for Cox proportional hazards models
-  
-  * residuals like Schoenfeld residuals plotted over time to test for 
-  validity of assumptions in the Cox proportional hazards model
-  
-  * equivalent of functions like survival::cox.zph()
-  
-    * dsBaseClient::ds.plot.cox.zphSLMA()
-    
-    * dsBase::plot.cox.zphDS()
-        
-
-
-## Plotting survival curves that are non-disclosive and privacy preserving
-
-The functions planned are:
-
-  * dsBaseClient::ds.survfit()
-  
-  * dsBase::survfitDS()
-  
-  * dsBaseClient::ds.plotsurvival()
-  
-  * dsBaseClient::ds.plotsurvival(survfit_object, fun="cloglog")
-  
-  * dsBase::plotsurvivalDS()
-  
-  * use of ggplot() within these functions
-  
-
-## Additional options in coxph()
-
-  * additional options in coxph() like control, subset
- 
-
-## Time dependent covariates in Cox proportional hazards models
-
-  * facility for inline functions in call to coxph.SLMA()
-  
-  ```
-  
-  coxph( Surv(time, status) ~ age + sex + tt(ph.karno),
-         data = lung,
-         tt   = function(x,t,...) x * log(t+20)
-       )
-      
-  
-  ```
-  
-  * other niche examples for time dependent covariates in survival models
-  
-  
-    * some examples are given in the following paper:
-    
-    
-    https:www.ncbi.nlm.nih.gov/pmc/articles/PMC6015946
-    
-    
-    * equivalent of survival::survSplit() as another approach for time dependent covariates  
-
-
-  
-
-
-# Other ideas
-
-  * privacy preserving plotting
-  
-  * privacy preserving summary using quantile means
-  
-  * technical definition of privacy and disclosure checks for plotting of survival models
-  
-      * for example, how does the ordering of events violate privacy? 
-      
-      * is it disclosive only if combined with other covariates (stratified by age, gender, etc.)?
-  
   
 
 # Acknowledgements
