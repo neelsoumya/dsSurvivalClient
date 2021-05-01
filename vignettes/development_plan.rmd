@@ -489,12 +489,6 @@ We disallow any Cox models where the number of parameters are greater than a fra
 ## Summary of Cox models with no individual data
 
 We also present privacy preserving summaries of Cox models and survival objects. These functions reveal no individual level data and present only quantiles.
-
-
-## Dealing with strata() that could be potentially disclosive
-
-An issue that needs further discussion is how to deal with strata in Cox models. It may be desirable to disallow Cox models with a strata that has less than a specified number of patients (for example 10).
-
   
 
 # Acknowledgements
