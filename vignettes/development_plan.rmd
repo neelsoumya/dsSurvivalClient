@@ -19,12 +19,12 @@ knitr::opts_chunk$set(echo=TRUE)
 
 # Summary
 
-This is a document that outlines technical notes and a development plan for implementing survival models
+This is a document that outlines a vignette for implementing survival models
 and meta-analyzing hazard ratios in the DataSHIELD platform.
 
 # Survival analysis in DataSHIELD
 
-We outline the development and code for implementing survival models and meta-analysis
+We outline code for implementing survival models and meta-analysis
 of hazard ratios in DataSHIELD.
 
 All code is available here:
@@ -32,8 +32,35 @@ All code is available here:
    * https://github.com/neelsoumya/dsSurvival
 
    * https://github.com/neelsoumya/dsSurvivalClient 
+
+   * https://github.com/neelsoumya/dsBase
+
+   * https://github.com/neelsoumya/dsBaseClient
     
    
+# Installation   
+
+```
+
+install.packages('devtools')
+
+library(devtools)
+
+
+devtools::install_github('neelsoumya/dsBaseClient')
+	
+devtools::install_github('neelsoumya/dsBase')
+	
+
+
+devtools::install_github('neelsoumya/dsSurvival')
+
+devtools::install_github('neelsoumya/dsSurvivalClient')
+
+```
+
+
+# Computational workflow
 
 The computational steps are outlined below. 
 The first step is connecting to the server and loading the survival data.
@@ -52,7 +79,7 @@ library(survival)
 library(metafor)
 library(ggplot2)
 library(survminer)
-library(dsSurvival)
+#library(dsSurvival)
 library(dsSurvivalClient)
 require('DSI')
 require('DSOpal')
@@ -446,7 +473,13 @@ Patricia Ryser-Welch for fruitful discussions and feedback.
   
   * http://www.metafor-project.org
   
-  * https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6015946
+  * https://github.com/neelsoumya/dsBase
+
+  * https://github.com/neelsoumya/dsBaseClient
+
+  * https://github.com/neelsoumya/dsSurvival
+
+  * https://github.com/neelsoumya/dsSurvivalClient
   
   
   
