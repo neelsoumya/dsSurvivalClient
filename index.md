@@ -37,19 +37,18 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
 ## Usage:
 
-    See vignettes below   
+See vignettes below   
 
-    1. https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
+* https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
 
-    2. https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
+* https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
 
-## Contact
+### Support or Contact
 
-    * Soumya Banerjee, Tom Bishop and DataSHIELD technical team
+* Soumya Banerjee, Tom Bishop and DataSHIELD technical team
 
-    * sb2333@cam.ac.uk
-    
+* sb2333@cam.ac.uk
 
 
 
@@ -77,8 +76,3 @@ Syntax highlighted code block
 ```
 
 
-### Support or Contact
-
-* Soumya Banerjee, Tom Bishop and DataSHIELD technical team
-
-* sb2333@cam.ac.uk
