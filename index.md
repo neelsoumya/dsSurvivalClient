@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+# Introduction
 
-```markdown
-
-Survival functions (client side) for DataSHIELD. These are client side functions.
+Survival functions (client side) for DataSHIELD. These are client side functions for survival models and Cox models.
 
 This is a standalone bolt on package for survival analysis in DataSHIELD.
 
@@ -10,7 +8,7 @@ This is a standalone bolt on package for survival analysis in DataSHIELD.
 
     * https://github.com/neelsoumya/dsSurvival
 
-* Installation
+## Installation
 
 ```
 
@@ -37,7 +35,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
        * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
 
-* Usage:
+## Usage:
 
     * see vignettes   
 
@@ -46,18 +44,15 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
     * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
 
-* Contact
+## Contact
 
     * Soumya Banerjee, Tom Bishop and DataSHIELD technical team
 
     * sb2333@cam.ac.uk
     
 
-```
 
-You can use the [editor on GitHub](https://github.com/neelsoumya/dsSurvivalClient/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
