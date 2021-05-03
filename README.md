@@ -30,6 +30,17 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
 ```
 
+
+   * Install R Studio and the development environment as described below:
+
+       * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
+
+
+   * Then install the virtual machines as described below:
+
+       * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
+
+
 * Usage:
 
     * see vignettes   
