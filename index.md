@@ -26,6 +26,15 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
 ```
 
+   * Install R Studio and the development environment as described below:
+
+       * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
+
+
+   * Then install the virtual machines as described below:
+
+       * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
+
 * Usage:
 
     * see vignettes   
@@ -77,4 +86,6 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+* Soumya Banerjee, Tom Bishop and DataSHIELD technical team
+
+* sb2333@cam.ac.uk
