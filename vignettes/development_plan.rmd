@@ -40,6 +40,19 @@ All code is available here:
    
 # Installation   
 
+Install R Studio and the development environment as described below:
+
+   * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
+
+
+Then install the virtual machines as described below:
+
+   * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
+
+
+Install the necesary packages by running the following commands:
+
+
 ```
 
 install.packages('devtools')
@@ -58,6 +71,9 @@ devtools::install_github('neelsoumya/dsSurvival')
 devtools::install_github('neelsoumya/dsSurvivalClient')
 
 ```
+
+Install dsBase (neelsoumya/dsBase main branch) and dsSurvival (neelsoumya/dsSurvival main branch) on the Opal virtual machine.
+
 
 
 # Computational workflow
