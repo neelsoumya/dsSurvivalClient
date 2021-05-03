@@ -1,6 +1,7 @@
 # Introduction
 
-Survival functions (client side) for DataSHIELD. These are client side functions for survival models and Cox models.
+Survival functions (client side) for DataSHIELD. DataSHIELD is a platform for federated analysis of private data. 
+This package has client side functions for survival models and Cox models.
 
 This is a standalone bolt on package for survival analysis in DataSHIELD.
 
@@ -49,30 +50,3 @@ See vignettes below
 * Soumya Banerjee, Tom Bishop and DataSHIELD technical team
 
 * sb2333@cam.ac.uk
-
-
-
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-
