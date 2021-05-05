@@ -408,7 +408,7 @@ We now outline how the hazard ratios from the survival models are meta-analyzed.
 We use the *metafor* package for meta-analysis. We show the summary of an 
 example meta-analysis and a forest plot below. The forest plot shows a basic
 example of meta-analyzed hazard ratios from a survival model (analyzed in
-DataSHIELD).
+dsSurvivalClient).
 
 The log-hazard ratios and their standard erros from each study can be
 found after running *ds.coxphSLMA()*
@@ -445,7 +445,7 @@ summary(meta_model)
 ```
 
 We now show a forest plot with the meta-analyzed hazard ratios. The hazard ratios come
-from the DataSHIELD function *ds.coxphSLMA()*. The hazard ratios are meta-analyzed
+from the dsSurvivalClient function *ds.coxphSLMA()*. The hazard ratios are meta-analyzed
 using the *metafor* package.
 
 ```{r fig.cap="Example forest plot of meta-analyzed hazard ratios.", echo=FALSE}
