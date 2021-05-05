@@ -1,7 +1,7 @@
 ---
 title: "Meta-analysis of survival models in the DataSHIELD platform"
 author: "Soumya Banerjee, Tom Bishop and DataSHIELD technical team "
-date: "3 May 2021"
+date: "5 May 2021"
 output:
   pdf_document:
     toc: yes
@@ -63,8 +63,6 @@ library(devtools)
 devtools::install_github('neelsoumya/dsBaseClient')
 	
 devtools::install_github('neelsoumya/dsBase')
-	
-
 
 devtools::install_github('neelsoumya/dsSurvival')
 
