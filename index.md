@@ -43,14 +43,14 @@ See vignettes below
 * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
 
-### Acknowledgements
+## Acknowledgements
 
 We acknowledge the help and support of the DataSHIELD technical team.
 We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater and
 Patricia Ryser-Welch for fruitful discussions and feedback.
 
 
-### Support or Contact
+## Support or Contact
 
 * Soumya Banerjee, Tom Bishop and DataSHIELD technical team
 
