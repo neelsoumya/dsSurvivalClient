@@ -487,26 +487,11 @@ DSI::datashield.logout(conns = connections)
 
 ```
 
-# Dealing with preserving privacy and disclosure checks
-
-Disclosure checks are an integral part of DataSHIELD. We outline some of the checks we have built in to ensure privacy of individual level data. We also outline some issues that need to be discussed.   
-
-
-## Disclosure related to oversaturated models
-
-We disallow any Cox models where the number of parameters are greater than a fraction (set to 0.2) of the number of data points. The number of data points is the number of entries (for all patients) in the survival data.
-
-
-## Summary of Cox models with no individual data
-
-We also present privacy preserving summaries of Cox models and survival objects. These functions reveal no individual level data and present only quantiles.
-  
 
 # Acknowledgements
 
 We acknowledge the help and support of the DataSHIELD technical team.
-We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater and
-Patricia Ryser-Welch for fruitful discussions and feedback.
+We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patricia Ryser-Welch and Wolfgang Vichtbauer for fruitful discussions and feedback.
 
 
 # References
