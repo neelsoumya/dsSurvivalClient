@@ -42,6 +42,9 @@ See vignettes below
 
 * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
+A screenshot of meta-analyzed hazard ratios from the survival model is shown below.
+
+![A screenshot of meta-analyzed hazard ratios from the survival model is shown below.](screenshot_survival_models.png)
 
 ## Acknowledgements
 
