@@ -470,7 +470,7 @@ dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object
 
 dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
 
-
+```
 
 \newpage
    
