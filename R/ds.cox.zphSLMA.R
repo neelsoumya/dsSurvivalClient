@@ -97,20 +97,7 @@ ds.cox.zphSLMA <- function(fit = NULL,
       stop(" Please provide a valid name for a server-side Cox proportional hazards model that has been fit to data !", call.=FALSE)
    }
    
-   
-   # call the server side function
-   # cat("On client side: \n")
-	
-   #cat(search.filter)
-   #cat("\n")
    calltext <- call("cox.zphSLMADS", fit, transform, terms, singledf, global)
-   # calltext <- call("coxphSLMADS",search.filter=stats::as.formula(search.filter), dataName)
-   
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
 
    # call aggregate function
    output <- datashield.aggregate(datasources, calltext)
@@ -120,4 +107,3 @@ ds.cox.zphSLMA <- function(fit = NULL,
 	
 }
 #ds.cox.zphSLMA
-
