@@ -13,6 +13,8 @@ For more information see \strong{Details}.}
 
 \item{dataName}{character string of name of data frame}
 
+\item{fun}{optional parameter to have an argument like 'cloglog'}
+
 \item{datasources}{a list of \code{\link{DSConnection-class}} objects obtained after login. 
 If the \code{datasources} argument is not specified
 the default set of connections will be used: see \code{\link{datashield.connections_default}}.}
@@ -76,5 +78,5 @@ Server function called: \code{plotsurvfitDS}.
 
 }
 \author{
-Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD technical team (2021).
+Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and DataSHIELD technical team (2021).
 }
