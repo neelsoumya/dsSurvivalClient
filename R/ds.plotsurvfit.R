@@ -8,23 +8,6 @@
 #' 	specifying the name of survfit object on the server-side created using ds.survfit().
 #' For more information see \strong{Details}. 
 #' @param dataName character string of name of data frame
-#' @param weights vector of case weights
-#' @param init vector of initial values of the iteration.
-#' @param ties character string specifying the method for tie handling. The Efron approximation is
-#'	used as the default. Other options are 'breslow' and 'exact'.
-#' @param singular.ok logical value indicating how to handle collinearity in the model matrix.
-#'	Default is TRUE. If TRUE, the program will automatically skip over columns of the X matrix
-#'	that are linear combinations of earlier columns. In this case the coefficients of such
-#'	columns will be NA and the variance matrix will contain zeros. 
-#' @param model logical value. If TRUE, the model frame is returned in component model.
-#' @param x logical value. If TRUE, the x matrix is returned in component x.
-#' @param y logical value. If TRUE, the response vector is returned in component y.
-#' @param control object of class survival::coxph.control() specifying iteration limit and 
-#'		other control options. Default is survival::coxph.control()
-#' @param combine_with_metafor logical If TRUE the
-#' 	estimates and standard errors for each regression coefficient are pooled across
-#' 	studies using random-effects meta-analysis under maximum likelihood (ML),
-#' 	restricted maximum likelihood (REML) or fixed-effects meta-analysis (FE). Default is FALSE. 
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
@@ -79,15 +62,6 @@
 #' @export
 ds.plotsurvfit <- function(formula = NULL,
                            dataName = NULL,
-                           weights = NULL,
-                           init = NULL,
-                           ties = 'efron',
-                           singular.ok = TRUE,
-                           model = FALSE,
-                           x = FALSE,
-                           y = TRUE,
-                           control = NULL,
-                           combine_with_metafor = FALSE,
                            datasources = NULL)
 {
   
