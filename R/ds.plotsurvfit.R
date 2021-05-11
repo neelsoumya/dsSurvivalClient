@@ -1,6 +1,6 @@
 #' @title Performs plotting of privacy preserving survival curves. 
-#' @description PPerforms plotting of privacy preserving survival curves. 
-#' @details This is a function that Performs plotting of privacy preserving survival curves.
+#' @description Performs plotting of privacy preserving survival curves. 
+#' @details This is a function that performs plotting of privacy preserving survival curves.
 #' 
 #' Server function called: \code{plotsurvfitDS}. 
 #' 
@@ -28,8 +28,7 @@
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
-#' @return \code{coxphSLMADS} returns to the client-side a summary of 
-#' the Cox proportional hazards model
+#' @return privacy preserving survival curve from the server side environment.
 #' @author Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD technical team (2021).
 #' @examples
 #' \dontrun{
