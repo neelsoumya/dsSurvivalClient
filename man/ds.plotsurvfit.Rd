@@ -4,7 +4,7 @@
 \alias{ds.plotsurvfit}
 \title{Performs plotting of privacy preserving survival curves.}
 \usage{
-ds.plotsurvfit(formula = NULL, dataName = NULL, datasources = NULL)
+ds.plotsurvfit(formula = NULL, dataName = NULL, fun = NULL, datasources = NULL)
 }
 \arguments{
 \item{formula}{character string

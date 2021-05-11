@@ -62,6 +62,7 @@
 #' @export
 ds.plotsurvfit <- function(formula = NULL,
                            dataName = NULL,
+                           fun = NULL,
                            datasources = NULL)
 {
   
@@ -75,8 +76,7 @@ ds.plotsurvfit <- function(formula = NULL,
   # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
   if(!(is.null(dataName)))
   {
-    # TODO: cannot find function isDefined but is is inds.glmerSLMA
-    # defined <- isDefined(datasources, dataName)
+    defined <- dsBase:::isDefined(datasources, dataName)
   }
   
   # verify that 'formula' was set
@@ -91,19 +91,24 @@ ds.plotsurvfit <- function(formula = NULL,
   # call aggregate function
   output <- datashield.aggregate(datasources, calltext)
   
-  # TODO: do for each study by using colnames which will have study1 etc	
-  # TODO: other arguments like fun
+  # TODO: other arguments 
   #	https://www.rdocumentation.org/packages/survival/versions/3.2-7/topics/plot.survfit
-  fun = NULL
   
-  if (is.null(fun))
-  {	   
-    graphics::plot(output$study1, main = 'Survival curve of anonymized data')	
-  }
-  else
-  {
-    graphics::plot(output$study1, main = 'Survival curve of anonymized data', fun = fun)	   
-  }	   
+  # Get the required grid according to the number of servers
+  nrows_plot <- ceiling(length(output) / 2)
+  if(nrows_plot != 1){par(mfrow=c(nrows_plot, 2))}
+  # Plot for each server
+  Map(function(x, n) {
+    funct <- eval("fun")
+    if (is.null(fun)){	
+      funct <- rlang::missing_arg()
+    }
+    graphics::plot(x, 
+                   main = paste0('Survival curve of anonymized data \n [', n, ']'),
+                   fun = funct)
+  }, output, names(output))
+  # Reset graphic options to not interfere other plots
+  par(mfrow=c(1,1))
   
   return(output)
   
