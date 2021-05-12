@@ -52,7 +52,7 @@ We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patr
 
 ## Support or Contact
 
-* Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD technical team
+* Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton, Xavier Escriba, Juan Gonzalez and DataSHIELD technical team
 
 * sb2333@cam.ac.uk
 
