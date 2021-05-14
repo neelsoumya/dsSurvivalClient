@@ -258,10 +258,10 @@ dsBaseClient::ds.ls()
 ```
 
 
-# Create survival object and call coxphSLMA()
+# Create survival object and call ds.coxph.SLMA()
 
 
-* use constructed Surv object in *coxph.SLMA()*
+* use constructed Surv object in *ds.coxph.SLMA()*
 
 ```
 dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
