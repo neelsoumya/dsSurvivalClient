@@ -492,7 +492,7 @@ DSI::datashield.logout(conns = connections)
 # Acknowledgements
 
 We acknowledge the help and support of the DataSHIELD technical team.
-We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patricia Ryser-Welch and Wolfgang Vichtbauer for fruitful discussions and feedback.
+We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patricia Ryser-Welch, Xavier Escriba, Juan Gonzalez and Wolfgang Vichtbauer for fruitful discussions and feedback.
 
 
 # References
