@@ -85,19 +85,9 @@ ds.coxphSummary <- function(x = NULL,
    }
    
    
-   # call the server side function
-   # cat("On client side: \n")
-	
-   #cat(search.filter)
-   #cat("\n")
    calltext <- call("coxphSummaryDS", x)
    # calltext <- call("coxphSLMADS",search.filter=stats::as.formula(search.filter), dataName)
    
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
 
    # call aggregate function
    output <- datashield.aggregate(datasources, calltext)
