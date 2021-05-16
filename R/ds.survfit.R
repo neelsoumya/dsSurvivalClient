@@ -110,23 +110,10 @@ ds.survfit <- function(formula = NULL,
    # construct call to call()	
    calltext <- call("survfitDS", formula)
    
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
-
    # call aggregate function
    # output <- datashield.aggregate(datasources, calltext)
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
-   # ds.assign(toAssign = calltext, newobj = 'surv_object', datasources = datasources)
-   
-   # output <- datashield.assign(conns = datasources, symbol = 'surv_object',
-   #                             value = calltext)
-   
-   # ds.assign(toAssign = 'D$female', newobj = 'E', datasources = connections)
-   # ds.assign(toAssign = 'D$female', newobj = 'surv_object', datasources = datasources)
-   # ds.assign(toAssign = 'SurvDS(', newobj = 'surv_object', datasources = datasources)
+
    # return summary of coxph model
    # output <- NULL
    return(output)
