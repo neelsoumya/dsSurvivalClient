@@ -50,6 +50,10 @@ A screenshot of meta-analyzed hazard ratios from the survival model is shown bel
 
 ![Meta-analyzed hazard ratios from survival models](screenshot_survival_models.png)
 
+# Release notes:
+
+v1.0.0: A basic release of survival models in DataSHIELD. This release has Cox proportional hazards models, summaries of models, diagnostics and the ability to meta-analyze hazard ratios. There is also capability to generate forest plots of meta-analyzed hazard ratios. This release supports study-level meta-analysis.
+
 
 # Acknowledgements
 
@@ -63,3 +67,9 @@ We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patr
 
 * sb2333@cam.ac.uk
     
+    
+# Citation
+
+If you use this code, please cite the following DOI
+
+[![DOI](https://zenodo.org/badge/362161720.svg)](https://zenodo.org/badge/latestdoi/362161720)
