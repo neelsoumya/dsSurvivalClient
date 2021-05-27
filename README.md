@@ -27,6 +27,16 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
 ```
 
+If you want to use a certain release then you can do the following
+
+```
+
+library(devtools)
+
+devtools::install_github('neelsoumya/dsSurvivalClient@v1.0.0')
+
+```
+
 * Install R Studio and the development environment as described below:
 
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
