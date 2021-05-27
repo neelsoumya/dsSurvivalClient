@@ -53,7 +53,7 @@ A screenshot of meta-analyzed hazard ratios from the survival model is shown bel
 
 # Release notes:
 
-v1.0.0: A basic release of survival models in DataSHIELD. This release has Cox proportional hazards models, summaries of models, diagnostics and the ability to meta-analyze hazard ratios. There is also capability to generate forest plots of meta-analyzed hazard ratios. This release supports study-level meta-analysis.
+v1.0.0: A basic release of survival models in DataSHIELD.  DataSHIELD is a federated analysis platform for secure data. This release has Cox proportional hazards models, summaries of models, diagnostics and the ability to meta-analyze hazard ratios. There is also capability to generate forest plots of meta-analyzed hazard ratios. This release supports study-level meta-analysis.
 
 
 # Acknowledgements
