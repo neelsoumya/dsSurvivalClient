@@ -6,7 +6,7 @@ Survival functions (client side) for DataSHIELD. These are client side functions
 
 This is a standalone bolt on package for survival analysis in DataSHIELD. DataSHIELD is a platform for federated analysis of private data.
 
-This is a branch for building privacy preserving survival curves (work done jointly with Demetris Avraam and Paul Burton).
+This is a branch for building privacy preserving survival curves (work done jointly with Demetris Avraam, Paul Burton, Xavier Escriba and Juan Gonzalez).
 
 
 * The server side package is called dsSurvival:
