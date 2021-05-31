@@ -34,7 +34,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
        * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
 
-## Usage:
+## Usage
 
 See vignettes below   
 
@@ -42,6 +42,8 @@ See vignettes below
 
 * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
+
+![Meta-analyzed hazard ratios from survival model](screenshot_survival_models.png)
 
 
 ## Acknowledgements
@@ -52,7 +54,7 @@ We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patr
 
 ## Support or Contact
 
-* Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba Montagut, Juan Gonzalez, Tom Bishop and DataSHIELD technical team
+* Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba Montagut, Juan Gonzalez and Tom R P Bishop
 
 * sb2333@cam.ac.uk
 
