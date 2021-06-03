@@ -67,7 +67,10 @@ v1.0.0: A basic release of survival models in DataSHIELD.  DataSHIELD is a feder
 
 A shiny graphical user interface for survival models has also been created by Xavier Escriba Montagut and Juan Gonzalez
 
-* https
+
+* https://github.com/isglobal-brge/ShinyDataSHIELD
+
+
 
 # Acknowledgements
 
