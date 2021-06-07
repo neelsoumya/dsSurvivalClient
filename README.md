@@ -75,7 +75,7 @@ A shiny graphical user interface for survival models has also been created by Xa
 # Acknowledgements
 
 We acknowledge the help and support of the DataSHIELD technical team.
-We are especially grateful to Paul Burton, Demetris Avraam, Stuart Wheater, Patricia Ryser-Welch and Wolfgang Vichtbauer for fruitful discussions and feedback.
+We are especially grateful to Yannick Marcon, Paul Burton, Demetris Avraam, Stuart Wheater, Patricia Ryser-Welch and Wolfgang Vichtbauer for fruitful discussions and feedback.
 
 
 # Contact
