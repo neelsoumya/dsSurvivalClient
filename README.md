@@ -37,6 +37,17 @@ devtools::install_github('neelsoumya/dsSurvivalClient@v1.0.0')
 
 ```
 
+If you want to try privacy preserving survival curves, then you can do the following
+
+```
+
+library(devtools)
+
+devtools::install_github('neelsoumya/dsSurvivalClient', ref = 'privacy_survival_curves')
+
+```
+
+
 * Install R Studio and the development environment as described below:
 
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
