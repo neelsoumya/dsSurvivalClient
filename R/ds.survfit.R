@@ -16,11 +16,11 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return \code{SurvDS} returns to the client-side a Surv() obejct for use in
 #' the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -54,9 +54,9 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
-#'   dsBaseClient::ds.survfit(formula='surv_object',object='survfit_object')   
+#'   dsSurvivalClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+#'   dsSurvivalClient::ds.survfit(formula='surv_object',object='survfit_object')   
 #'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -111,7 +111,6 @@ ds.survfit <- function(formula = NULL,
    calltext <- call("survfitDS", formula)
    
    # call aggregate function
-   # output <- datashield.aggregate(datasources, calltext)
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
 
    # return summary of coxph model
