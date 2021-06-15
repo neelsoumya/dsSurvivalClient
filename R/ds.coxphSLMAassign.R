@@ -29,11 +29,11 @@
 #' @param objectname character name of server-side variable to store the 
 #'     Cox model
 #' @return NULL
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -67,12 +67,12 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
 #'             dataName = 'D', datasources = connections)
 #'
-#'   dsBaseClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female',
+#'   dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female',
 #'              dataName = 'D', datasources = connections,
 #'              objectname = 'coxph_serverside')
 #'   
