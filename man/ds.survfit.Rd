@@ -35,7 +35,7 @@ Server function called: \code{survfitDS}.
 \examples{
 \dontrun{
 
-  ## Version 6
+  ## Version 1.0.0
   
   # connecting to the Opal servers
 
@@ -69,9 +69,9 @@ Server function called: \code{survfitDS}.
             newobj = "SURVTIME",
             datasources = connections)
 
-  dsBaseClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
-  dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
-  dsBaseClient::ds.survfit(formula='surv_object',object='survfit_object')   
+  dsSurvivalClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
+  dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+  dsSurvivalClient::ds.survfit(formula='surv_object',object='survfit_object')   
 
   # clear the Datashield R sessions and logout
   datashield.logout(connections)
@@ -79,5 +79,5 @@ Server function called: \code{survfitDS}.
 
 }
 \author{
-Soumya Banerjee and Tom Bishop, 2020
+Soumya Banerjee and Tom Bishop, 2021
 }

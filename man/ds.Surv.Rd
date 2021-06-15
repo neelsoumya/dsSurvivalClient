@@ -59,7 +59,7 @@ Server function called: \code{SurvDS}.
 \examples{
 \dontrun{
 
-  ## Version 6
+  ## Version 1.0.0
   
   # connecting to the Opal servers
 
@@ -104,11 +104,11 @@ Server function called: \code{SurvDS}.
             datasources = connections)
 
   # create a server-side survival object
-  dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
+  dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
 		   event = 'EVENT', objectname='surv_object')
 
   # create a Cox proportional hazards model using the created survival object	
-  dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+  dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
   
   # clear the Datashield R sessions and logout
   datashield.logout(connections)
@@ -116,5 +116,5 @@ Server function called: \code{SurvDS}.
 
 }
 \author{
-Soumya Banerjee and Tom Bishop, 2020
+Soumya Banerjee and Tom Bishop, 2021
 }
