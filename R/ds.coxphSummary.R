@@ -15,11 +15,11 @@
 #' For more information see \strong{Details}. 
 #' @return \code{coxphSummaryDS} returns to the client-side the summary of
 #' 	the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -53,13 +53,13 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female', 
 #'              dataName = 'D', datasources = connections, 
 #'		objectname = 'coxph_serverside')
 #'   
-#'   dsBaseClient::ds.coxphSummary(x = 'coxph_serverside')
+#'   dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 #'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
