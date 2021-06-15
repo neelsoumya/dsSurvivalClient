@@ -2,7 +2,7 @@
 
 # Introduction
 
-Survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for survival models and Cox models.
+Survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models and Cox models.
 
 This is a standalone bolt on package for survival analysis in DataSHIELD. DataSHIELD is a platform for federated analysis of private data.
 
