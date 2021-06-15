@@ -28,11 +28,11 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return \code{SurvDS} returns to the client-side a Surv() obejct for use in
 #' the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -77,11 +77,11 @@
 #'             datasources = connections)
 #'
 #'   # create a server-side survival object
-#'   dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
+#'   dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
 #'			   event = 'EVENT', objectname='surv_object')
 #'
 #'   # create a Cox proportional hazards model using the created survival object	
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
 #'   
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -140,7 +140,6 @@ ds.Surv <- function(time = NULL,
    calltext <- call("SurvDS", time, time2, event, type, origin) # SurvDS
    
    # call aggregate function
-   # output <- datashield.aggregate(datasources, calltext)
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
  
    # return summary of coxph model
