@@ -58,7 +58,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient', ref = 'privacy_survival_
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
 
 
-# Usage:
+# Usage
 
 * see vignettes   
 
