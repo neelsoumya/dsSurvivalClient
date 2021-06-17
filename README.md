@@ -60,7 +60,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient', ref = 'privacy_survival_
 
 # Usage
 
-* see vignettes   
+* see vignettes and tutorials below   
 
 * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
 
