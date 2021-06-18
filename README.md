@@ -67,7 +67,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient', ref = 'privacy_survival_
 * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
 
 
-A screenshot of meta-analyzed hazard ratios from the survival model is shown below.
+A screenshot of meta-analyzed hazard ratios from a survival model is shown below.
 
 ![Meta-analyzed hazard ratios from survival models](screenshot_survival_models.png)
 
