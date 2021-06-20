@@ -22,7 +22,7 @@ This is a standalone bolt on package for survival analysis in DataSHIELD. DataSH
 
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
 
-* Install dsSurvival on the Opal server in the VM
+* Install dsSurvival on Opal server in the VM
 
 
 ```
