@@ -24,7 +24,9 @@ This is a standalone bolt on package for survival analysis in DataSHIELD. DataSH
 
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/1657634898/Tutorial+6.1.0+100+VM
 
-* Install dsSurvival on Opal server in the VM (type neelsoumya/dsSurvival and main in the textboxes)
+* Install dsSurvival on Opal server in the VM (type neelsoumya/dsSurvival and main in the textboxes) as shown in the screenshot below
+
+![Screenshot of installation of package in VM](screenshot_VM_install_screenshot.PNG)
 
 
 ```
