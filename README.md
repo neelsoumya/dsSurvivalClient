@@ -18,7 +18,7 @@ This is a standalone bolt on package for survival analysis in DataSHIELD. DataSH
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/12943461/Getting+started
 
 
-* Then install the virtual machines as described below:
+* Install the virtual machines as described below:
 
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/931069953/Installation+Training+Hub-+DataSHIELD+v6
 
