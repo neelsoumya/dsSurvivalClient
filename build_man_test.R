@@ -1,5 +1,5 @@
 ###########################################
-# Script to build manuals and test code
+# Script to build manuals and test
 #
 # Usage:
 #   R --no-save < build_man_test.R
@@ -20,6 +20,11 @@ require('DSOpal')
 # build manuals
 ##################
 devtools::build_manual()
+
+########################
+# update documentation
+########################
+devtools::check_man()
 
 ##################
 # build vignettes
