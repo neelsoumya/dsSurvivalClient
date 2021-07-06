@@ -24,6 +24,7 @@
 #'   require('DSI')
 #'   require('DSOpal')
 #'   require('dsBaseClient')
+#'   library(dsSurvivalClient)
 #'
 #'   builder <- DSI::newDSLoginBuilder()
 #'   builder$append(server = "study1", 
@@ -51,10 +52,14 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
 #'             dataName = 'D', datasources = connections)
+#'
+#'   dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+#'
+#'   dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
 #'   
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -66,6 +71,9 @@ ds.plotsurvfit <- function(formula = NULL,
                            fun = NULL,
                            datasources = NULL)
 {
+  # method_anonymization = 2,
+	#		noise = 0.03,
+	#		knn = 20
   
   # look for DS connections
   # if one not provided then get current
@@ -87,7 +95,7 @@ ds.plotsurvfit <- function(formula = NULL,
   }
   
   
-  calltext <- call("plotsurvfitDS", formula=formula, dataName) #, weights, init, ties, singular.ok, model, x, y, control)
+  calltext <- call("plotsurvfitDS", formula=formula, dataName) #, method_anonymization, noise, knn)
   
   # call aggregate function
   output <- datashield.aggregate(datasources, calltext)
