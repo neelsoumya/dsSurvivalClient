@@ -13,11 +13,11 @@
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return privacy preserving survival curve from the server side environment.
-#' @author Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and DataSHIELD technical team (2021).
+#' @author Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom Bishop (2021).
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.1
 #'   
 #'   # connecting to the Opal servers
 #' 
