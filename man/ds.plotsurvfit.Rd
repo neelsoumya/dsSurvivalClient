@@ -4,7 +4,15 @@
 \alias{ds.plotsurvfit}
 \title{Performs plotting of privacy preserving survival curves.}
 \usage{
-ds.plotsurvfit(formula = NULL, dataName = NULL, fun = NULL, datasources = NULL)
+ds.plotsurvfit(
+  formula = NULL,
+  dataName = NULL,
+  fun = NULL,
+  datasources = NULL,
+  method_anonymization = 2,
+  noise = 0.03,
+  knn = 20
+)
 }
 \arguments{
 \item{formula}{character string
@@ -18,6 +26,16 @@ For more information see \strong{Details}.}
 \item{datasources}{a list of \code{\link{DSConnection-class}} objects obtained after login. 
 If the \code{datasources} argument is not specified
 the default set of connections will be used: see \code{\link{datashield.connections_default}}.}
+
+\item{method_anonymization}{an integer. Method of anonymization to be used (1: deterministic, 2: probabilistic). Default value is 2.}
+
+\item{noise}{an integer. fraction of noise (between 0 and 1) to be added to original data. 
+Noise is added as a percentage of original value. 
+This is used for probabilistic anonymization.
+Default value is 0.03}
+
+\item{knn}{an integer. Number of nearest neighbours to be used for k nearest neighbours algoithm (for determinstic anonymization). 
+Default value is 20.}
 }
 \value{
 privacy preserving survival curve from the server side environment.
@@ -33,13 +51,14 @@ Server function called: \code{plotsurvfitDS}.
 \examples{
 \dontrun{
 
-  ## Version 6
+  ## Version 1.1
   
   # connecting to the Opal servers
 
   require('DSI')
   require('DSOpal')
   require('dsBaseClient')
+  library(dsSurvivalClient)
 
   builder <- DSI::newDSLoginBuilder()
   builder$append(server = "study1", 
@@ -67,10 +86,14 @@ Server function called: \code{plotsurvfitDS}.
             newobj = "SURVTIME",
             datasources = connections)
 
-  dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+  dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 
-  dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+  dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
             dataName = 'D', datasources = connections)
+
+  dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+
+  dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
   
   # clear the Datashield R sessions and logout
   datashield.logout(connections)
@@ -78,5 +101,5 @@ Server function called: \code{plotsurvfitDS}.
 
 }
 \author{
-Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and DataSHIELD technical team (2021).
+Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom Bishop (2021).
 }
