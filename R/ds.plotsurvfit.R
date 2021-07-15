@@ -8,11 +8,12 @@
 #' 	specifying the name of survfit object on the server-side created using ds.survfit().
 #' For more information see \strong{Details}. 
 #' @param dataName character string of name of data frame
-#' @param fun optional parameter to have an argument like 'cloglog'
+#' @param fun optional parameter to have an argument. For example you can pass 'cloglog'
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
-#' @param method_anonymization an integer. Method of anonymization to be used (1: deterministic, 2: probabilistic). Default value is 2.
+#' @param method_anonymization an integer. Method of anonymization to be used (1: deterministic, 2: probabilistic). 
+#'     Default value is 2.
 #' @param noise an integer. fraction of noise (between 0 and 1) to be added to original data. 
 #'     Noise is added as a percentage of original value. This is used for probabilistic anonymization.
 #'     Default value is 0.03 
@@ -101,7 +102,7 @@ ds.plotsurvfit <- function(formula = NULL,
     stop(" Please provide a valid survival formula!", call.=FALSE)
   }
   
-  
+  # call the server side function
   calltext <- call("plotsurvfitDS", formula=formula, dataName, method_anonymization, noise, knn)
   # calltext <- call("plotsurvfitDS", formula=formula, dataName) #, method_anonymization, noise, knn)	
   
