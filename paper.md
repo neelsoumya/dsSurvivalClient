@@ -1,3 +1,5 @@
+A sample submission file from:
+
 # https://joss.readthedocs.io/en/latest/submitting.html
 
 ---
