@@ -1,6 +1,6 @@
 # dsSurvivalClient
 
-# Introduction
+## Introduction
 
 This is a package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
 
@@ -11,7 +11,7 @@ This is a standalone bolt on package for survival analysis in DataSHIELD. DataSH
     * https://github.com/neelsoumya/dsSurvival
 
 
-# Installation
+## Installation
 
 * Install R Studio and the development environment as described below:
 
@@ -67,7 +67,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient', ref = 'privacy_survival_
 
 
 
-# Usage
+## Usage
 
 * see vignettes and tutorials below   
 
@@ -81,7 +81,7 @@ A screenshot of meta-analyzed hazard ratios from a survival model is shown below
 ![Meta-analyzed hazard ratios from survival models](screenshot_survival_models.png)
 
 
-# Release notes
+## Release notes
 
 v1.0.0: A basic release of survival models in DataSHIELD.  DataSHIELD is a federated analysis platform for secure data. This release has Cox proportional hazards models, summaries of models, diagnostics and the ability to meta-analyze hazard ratios. There is also capability to generate forest plots of meta-analyzed hazard ratios. This release supports study-level meta-analysis.
 
@@ -94,14 +94,14 @@ A shiny graphical user interface for survival models has also been created by Xa
 v1.1.0: Forthcoming. This will have privacy preserving survival curves.
 
 
-# Acknowledgements
+## Acknowledgements
 
 We acknowledge the help and support of the DataSHIELD technical team.
 We are especially grateful to Yannick Marcon, Paul Burton, Demetris Avraam, Stuart Wheater, Patricia Ryser-Welch and Wolfgang Vichtbauer for fruitful discussions and feedback.
 
 
 
-# Contact
+## Contact
 
 * Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba Montagut, Juan Gonzalez, Tom R P Bishop and DataSHIELD technical team
 
@@ -114,7 +114,7 @@ We are especially grateful to Yannick Marcon, Paul Burton, Demetris Avraam, Stua
     * https://www.datashield.ac.uk
     
     
-# Citation
+## Citation
 
 If you use this code, please cite the following DOI
 
