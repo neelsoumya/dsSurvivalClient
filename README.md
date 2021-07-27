@@ -12,7 +12,7 @@ DataSHIELD has a client-server architecture and this package has a client side a
 
     * https://github.com/neelsoumya/dsSurvival
 
-* The cleint side package is called dsSurvivalClient:
+* The client side package is called dsSurvivalClient:
 
     * https://github.com/neelsoumya/dsSurvivalClient
 
