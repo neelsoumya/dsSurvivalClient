@@ -106,7 +106,6 @@ We acknowledge the help and support of the DataSHIELD technical team.
 We are especially grateful to Elaine Smith, Stuart Wheater, Yannick Marcon, Paul Burton, Demetris Avraam, Patricia Ryser-Welch and Wolfgang Viechtbauer for fruitful discussions and feedback.
 
 
-
 ## Contact
 
 * Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba Montagut, Juan Gonzalez, Tom R P Bishop and DataSHIELD technical team
