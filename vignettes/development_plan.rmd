@@ -138,6 +138,20 @@ require('dsBaseClient')
 #######################
 builder <- DSI::newDSLoginBuilder()
 
+# TODO: use open server
+# builder$append(server="server1", url="https://opal-sandbox.mrc-epid.cam.ac.uk",
+#                user="dsuser", password="password", 
+#               table = "SURVIVAL.EXPAND_NO_MISSING1")
+
+# builder$append(server="server1", url="https://opal-sandbox.mrc-epid.cam.ac.uk",
+#               user="dsuser", password="password", 
+#               table = "SURVIVAL.EXPAND_NO_MISSING2")
+	       
+# builder$append(server="server1", url="https://opal-sandbox.mrc-epid.cam.ac.uk",
+#               user="dsuser", password="password", 
+#               table = "SURVIVAL.EXPAND_NO_MISSING3")	       
+
+
 builder$append(server = "study1", 
                url = "http://192.168.56.100:8080/", 
                user = "administrator", password = "datashield_test&", 
