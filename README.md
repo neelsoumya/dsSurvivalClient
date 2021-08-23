@@ -82,7 +82,8 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 
 
 
-* see vignettes and tutorials below   
+You can also see vignettes and tutorials below:
+
 
 * https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
 
