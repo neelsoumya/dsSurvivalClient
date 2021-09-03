@@ -44,8 +44,6 @@ install.packages('devtools')
 library(devtools)
 
 devtools::install_github('neelsoumya/dsBaseClient')
-	
-devtools::install_github('neelsoumya/dsBase')
 
 devtools::install_github('neelsoumya/dsSurvivalClient')
 
@@ -82,14 +80,6 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 
 
 
-You can also see vignettes and tutorials below:
-
-
-* https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
-
-* https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
-
-
 A screenshot of meta-analyzed hazard ratios from a survival model is shown below.
 
 ![Meta-analyzed hazard ratios from survival models](screenshot_survival_models.png)
@@ -105,7 +95,7 @@ A shiny graphical user interface for building survival models in DataSHIELD has 
 * https://github.com/isglobal-brge/ShinyDataSHIELD
 
 
-v1.1.0: Forthcoming. This will have privacy preserving survival curves.
+v2.0.0: Forthcoming. This will have privacy preserving survival curves.
 
 
 ## Acknowledgements
