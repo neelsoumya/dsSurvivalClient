@@ -32,7 +32,7 @@ DataSHIELD has a client-server architecture and this package has a client side a
 
     * https://data2knowledge.atlassian.net/wiki/spaces/DSDEV/pages/1657634898/Tutorial+6.1.0+100+VM
 
-* Install dsBase and dsSurvival on Opal server in the VM (type neelsoumya/dsSurvival and main in the textboxes) as shown in the screenshot below
+* Install dsBase and dsSurvival on Opal server in the Virtual Machine (type neelsoumya/dsSurvival and main in the textboxes) as shown in the screenshot below
 
 ![Screenshot of installation of package in VM](Capture_VM_install_screenshot.PNG)
 
@@ -95,7 +95,7 @@ A shiny graphical user interface for building survival models in DataSHIELD has 
 * https://github.com/isglobal-brge/ShinyDataSHIELD
 
 
-v2.0.0: Forthcoming. This will have privacy preserving survival curves.
+v2.0.0: Forthcoming. This release will have privacy preserving survival curves.
 
 
 ## Acknowledgements
