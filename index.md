@@ -34,11 +34,9 @@ devtools::install_github('neelsoumya/dsSurvivalClient')
 
 ## Usage
 
-See vignettes below   
+A tutorial in bookdown format is available here:
 
-* https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.rmd
-
-* https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/development_plan.pdf
+https://neelsoumya.github.io/dsSurvival_bookdown/
 
 
 The meta-analyzed hazard ratios from a survival model are shown below.
