@@ -4,9 +4,9 @@
 
 This is a package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
 
-This is a standalone package for survival analysis in DataSHIELD. DataSHIELD is a platform for federated analysis of private data.
+This is a standalone package for survival analysis in DataSHIELD. 
 
-DataSHIELD has a client-server architecture and this package has a client side and server side component.
+DataSHIELD is a platform for federated analysis of private data. DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
 * The server side package is called dsSurvival:
 
