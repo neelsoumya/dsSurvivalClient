@@ -17,6 +17,12 @@ DataSHIELD is a platform for federated analysis of private data. DataSHIELD has 
     * https://github.com/neelsoumya/dsSurvivalClient
 
 
+A tutorial in bookdown format with executable code is available here:
+
+https://neelsoumya.github.io/dsSurvival_bookdown/
+
+
+
 ## Installation
 
 * Install R Studio and the development environment as described below:
