@@ -6,6 +6,13 @@ This is a package for building survival functions (client side) for DataSHIELD (
 
 This is a standalone package for survival analysis in DataSHIELD. 
 
+
+A tutorial in bookdown format with executable code is available here:
+
+https://neelsoumya.github.io/dsSurvival_bookdown/
+
+
+
 DataSHIELD is a platform for federated analysis of private data. DataSHIELD has a client-server architecture and this package has a client side and server side component.
 
 * The server side package is called dsSurvival:
@@ -15,11 +22,6 @@ DataSHIELD is a platform for federated analysis of private data. DataSHIELD has 
 * The client side package is called dsSurvivalClient:
 
     * https://github.com/neelsoumya/dsSurvivalClient
-
-
-A tutorial in bookdown format with executable code is available here:
-
-https://neelsoumya.github.io/dsSurvival_bookdown/
 
 
 
