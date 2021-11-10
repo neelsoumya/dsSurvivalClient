@@ -24,7 +24,7 @@
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 1.1
+#'   ## Version 2.0
 #'   
 #'   # connecting to the Opal servers
 #' 
