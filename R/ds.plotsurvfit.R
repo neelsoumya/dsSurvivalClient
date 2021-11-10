@@ -20,7 +20,7 @@
 #' @param knn an integer. Number of nearest neighbours to be used for k nearest neighbours algoithm (for determinstic anonymization). 
 #'     Default value is 20.
 #' @return privacy preserving survival curve from the server side environment.
-#' @author Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom R P Bishop (2021).
+#' @author Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom RP Bishop (2021).
 #' @examples
 #' \dontrun{
 #'
