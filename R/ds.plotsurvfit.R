@@ -1,6 +1,6 @@
 #' @title Performs plotting of privacy preserving survival curves. 
 #' @description Performs plotting of privacy preserving survival curves. 
-#' @details This is a function that plots privacy preserving survival curves.
+#' @details This is a server-side function that plots privacy preserving survival curves.
 #' 
 #' Server function called: \code{plotsurvfitDS}. 
 #' 
