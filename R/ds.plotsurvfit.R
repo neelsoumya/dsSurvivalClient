@@ -124,9 +124,11 @@ ds.plotsurvfit <- function(formula = NULL,
                    main = paste0('Survival curve of anonymized data \n [', n, ']'),
                    fun = funct)
   }, output, names(output))
+	
   # Reset graphic options to not interfere other plots
   par(mfrow=c(1,1))
   
+  # return this privacy preserving plot	
   return(output)
   
 }
