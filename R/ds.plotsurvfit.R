@@ -104,7 +104,6 @@ ds.plotsurvfit <- function(formula = NULL,
   
   # call the server side function
   calltext <- call("plotsurvfitDS", formula=formula, dataName, method_anonymization, noise, knn)
-  # calltext <- call("plotsurvfitDS", formula=formula, dataName) #, method_anonymization, noise, knn)	
   
   # call aggregate function
   output <- datashield.aggregate(datasources, calltext)
