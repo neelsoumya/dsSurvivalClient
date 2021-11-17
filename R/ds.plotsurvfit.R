@@ -19,6 +19,8 @@
 #'     Default value is 0.03 
 #' @param knn an integer. Number of nearest neighbours to be used for k nearest neighbours algoithm (for determinstic anonymization). 
 #'     Default value is 20.
+#' @param xlab X-axis label, a character string. Default value is ''.
+#' @param ylab Y-axis label, a character string. Default value is ''.
 #' @return privacy preserving survival curve from the server side environment.
 #' @author Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom RP Bishop (2021).
 #' @examples
@@ -79,7 +81,9 @@ ds.plotsurvfit <- function(formula = NULL,
                            datasources = NULL,
                            method_anonymization = 2,
                            noise = 0.03,
-                           knn = 20
+                           knn = 20,
+			   xlab = '',
+			   ylab = ''
 			  )
 {
   
@@ -122,7 +126,9 @@ ds.plotsurvfit <- function(formula = NULL,
     }
     graphics::plot(x, 
                    main = paste0('Survival curve of anonymized data \n [', n, ']'),
-                   fun = funct)
+                   fun = funct,
+		   xlab = xlab,
+		   ylab = ylab)
   }, output, names(output))
 	
   # Reset graphic options to not interfere other plots
