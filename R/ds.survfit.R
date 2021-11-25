@@ -1,5 +1,5 @@
 #' @title Creates a server-side Survival fit (survfit) object for use in Cox proportional hazards model.
-#' @description Creates a server side Survival fit (survfit) object,
+#' @description Creates a server side Survival fit (survival::survfit) object,
 #' @details This is a function that creates a server side survfit object.
 #'	This is to be used in plotting results from survival analysis using the Cox 
 #' 	proportional hazards model. 
@@ -16,11 +16,11 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return \code{SurvDS} returns to the client-side a Surv() obejct for use in
 #' the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom RP Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 2.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -55,7 +55,9 @@
 #'             datasources = connections)
 #'
 #'   dsBaseClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
+#'
 #'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+#'
 #'   dsBaseClient::ds.survfit(formula='surv_object',object='survfit_object')   
 #'
 #'   # clear the Datashield R sessions and logout
