@@ -15,7 +15,7 @@
 #' For more information see \strong{Details}. 
 #' @return \code{coxphSummaryDS} returns to the client-side the summary of
 #' 	the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2021
+#' @author Soumya Banerjee and Tom RP Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
