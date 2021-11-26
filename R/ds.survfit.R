@@ -1,4 +1,4 @@
-#' @title Creates a server-side Survival fit (survfit) object for use in Cox proportional hazards model.
+#' @title Creates a server-side Survival fit (survival::survfit) object for use in Cox proportional hazards model.
 #' @description Creates a server side Survival fit (survival::survfit) object,
 #' @details This is a function that creates a server side survfit object.
 #'	This is to be used in plotting results from survival analysis using the Cox 
@@ -58,7 +58,7 @@
 #'
 #'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
 #'
-#'   dsBaseClient::ds.survfit(formula='surv_object',object='survfit_object')   
+#'   dsBaseClient::ds.survfit(formula='surv_object', object='survfit_object')   
 #'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
