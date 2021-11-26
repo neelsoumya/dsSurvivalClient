@@ -14,7 +14,7 @@
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
-#' @return \code{SurvDS} returns to the client-side a Surv() obejct for use in
+#' @return \code{SurvDS} returns to the client-side a Surv() object for use in
 #' the Cox proportional hazards model
 #' @author Soumya Banerjee and Tom RP Bishop, 2021
 #' @examples
