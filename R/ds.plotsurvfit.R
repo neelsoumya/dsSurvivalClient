@@ -1,4 +1,4 @@
-#' @title Performs plotting of privacy preserving survival curves. 
+#' @title Performs plotting of privacy preserving survival curves in DataSHIELD. 
 #' @description Performs plotting of privacy preserving survival curves. 
 #' @details This is a server-side function that plots privacy preserving survival curves.
 #' 
@@ -14,7 +14,7 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @param method_anonymization an integer. Method of anonymization to be used (1: deterministic, 2: probabilistic). 
 #'     Default value is 2.
-#' @param noise an integer. fraction of noise (between 0 and 1) to be added to original data. 
+#' @param noise an integer. Fraction of noise (between 0 and 1) to be added to original data. 
 #'     Noise is added as a percentage of original value. This is used for probabilistic anonymization.
 #'     Default value is 0.03 
 #' @param knn an integer. Number of nearest neighbours to be used for k nearest neighbours algoithm (for determinstic anonymization). 
