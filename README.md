@@ -1,5 +1,7 @@
 # dsSurvivalClient
 
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+
 ## Introduction
 
 This is a standalone package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
@@ -174,5 +176,3 @@ or see the CITATION.cff file edited using
 
 https://citation-file-format.github.io/cff-initializer-javascript/
 
-
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
