@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This is a standalone package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
+`dsSurvivalClient` is a standalone package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
 
 A tutorial in bookdown format with executable code is available here:
 
@@ -57,7 +57,9 @@ Follow the tutorial in bookdown format with executable code:
 
 https://neelsoumya.github.io/dsSurvival_bookdown/
 
+This uses the Opal demo server which has all server-side packages preinstalled
 
+https://opal-sandbox.mrc-epid.cam.ac.uk/
 
 
 ## Installation
@@ -78,6 +80,11 @@ https://neelsoumya.github.io/dsSurvival_bookdown/
 * Install dsBase and dsSurvival on Opal server in the Virtual Machine (type neelsoumya/dsSurvival and main in the textboxes) as shown in the screenshot below
 
 ![Screenshot of installation of package in VM](Capture_VM_install_screenshot.PNG)
+
+
+Please see the link below on how to install a package in Opal
+
+https://opaldoc.obiba.org/en/latest/web-user-guide/administration/datashield.html#add-package
 
 
 ```r
