@@ -114,9 +114,6 @@ ds.plotsurvfit <- function(formula = NULL,
   # call aggregate function
   output <- datashield.aggregate(datasources, calltext)
   
-  # TODO: implement other arguments 
-  #	https://www.rdocumentation.org/packages/survival/versions/3.2-7/topics/plot.survfit
-  
   # Get the required grid according to the number of servers
   nrows_plot <- ceiling(length(output) / 2)
   if(nrows_plot != 1){par(mfrow=c(nrows_plot, 2))}
