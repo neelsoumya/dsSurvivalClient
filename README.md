@@ -4,7 +4,7 @@
 
 ## Introduction
 
-`dsSurvivalClient` is a standalone package for building survival functions (client side) for DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
+`dsSurvivalClient` is a package for building survival functions (client side) in DataSHIELD (a platform for federated analysis of private data). These are client side functions for building survival models, Cox proportional hazards models and Cox regression models.
 
 A tutorial in bookdown format with executable code is available here:
 
@@ -183,7 +183,7 @@ or see the CITATION.cff file edited using
 
 https://citation-file-format.github.io/cff-initializer-javascript/
 
-and the following
+and the following manuscript
 
 dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD
 
