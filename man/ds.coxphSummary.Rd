@@ -81,5 +81,5 @@ Server function called: \code{coxphSummaryDS}.
 
 }
 \author{
-Soumya Banerjee and Tom Bishop, 2021
+Soumya Banerjee and Tom RP Bishop, 2021
 }
