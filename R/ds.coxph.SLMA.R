@@ -217,7 +217,7 @@ ds.coxph.SLMA <- function(formula = NULL,
        for (k in 1:numstudies)
        {
            betamatrix[,k] <- output[[k]]$coefficients[,1]
-           sematrix[,k]   <- output[[k]]$coefficients[,2]
+           sematrix[,k]   <- output[[k]]$coefficients[,3]
        }
 	   
        # create a list to store all RMA metafor values
