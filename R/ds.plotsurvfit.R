@@ -12,13 +12,6 @@
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
-#' @param method_anonymization an integer. Method of anonymization to be used (1: deterministic, 2: probabilistic). 
-#'     Default value is 2.
-#' @param noise an integer. Fraction of noise (between 0 and 1) to be added to original data. 
-#'     Noise is added as a percentage of original value. This is used for probabilistic anonymization.
-#'     Default value is 0.03 
-#' @param knn an integer. Number of nearest neighbours to be used for k nearest neighbours algoithm (for determinstic anonymization). 
-#'     Default value is 20.
 #' @param xlab X-axis label, a character string. Default value is ''.
 #' @param ylab Y-axis label, a character string. Default value is ''.
 #' @return privacy preserving survival curve from the server side environment.
@@ -81,9 +74,9 @@ ds.plotsurvfit <- function(formula = NULL,
                            dataName = NULL,
                            fun = NULL,
                            datasources = NULL,
-                           method_anonymization = 2,
-                           noise = 0.03,
-                           knn = 20,
+                           # method_anonymization = 2,
+                           # noise = 0.03,
+                           # knn = 20,
 			   xlab = '',
 			   ylab = ''
 			  )
@@ -109,7 +102,7 @@ ds.plotsurvfit <- function(formula = NULL,
   }
   
   # call the server side function
-  calltext <- call("plotsurvfitDS", formula=formula, dataName, method_anonymization, noise, knn)
+  calltext <- call("plotsurvfitDS", formula=formula, dataName) #, method_anonymization, noise, knn)
   
   # call aggregate function
   output <- datashield.aggregate(datasources, calltext)
