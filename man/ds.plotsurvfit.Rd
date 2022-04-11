@@ -9,9 +9,6 @@ ds.plotsurvfit(
   dataName = NULL,
   fun = NULL,
   datasources = NULL,
-  method_anonymization = 2,
-  noise = 0.03,
-  knn = 20,
   xlab = "",
   ylab = ""
 )
@@ -28,16 +25,6 @@ For more information see \strong{Details}.}
 \item{datasources}{a list of \code{\link{DSConnection-class}} objects obtained after login. 
 If the \code{datasources} argument is not specified
 the default set of connections will be used: see \code{\link{datashield.connections_default}}.}
-
-\item{method_anonymization}{an integer. Method of anonymization to be used (1: deterministic, 2: probabilistic). 
-Default value is 2.}
-
-\item{noise}{an integer. Fraction of noise (between 0 and 1) to be added to original data. 
-Noise is added as a percentage of original value. This is used for probabilistic anonymization.
-Default value is 0.03}
-
-\item{knn}{an integer. Number of nearest neighbours to be used for k nearest neighbours algoithm (for determinstic anonymization). 
-Default value is 20.}
 
 \item{xlab}{X-axis label, a character string. Default value is ''.}
 
