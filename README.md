@@ -134,6 +134,10 @@ A screenshot of meta-analyzed hazard ratios from a survival model is shown below
 
 ![Meta-analyzed hazard ratios from survival models](screenshot_survival_models.png)
 
+For polished publication ready plots, use the following script `forestplot_FINAL.R`
+
+   https://github.com/neelsoumya/dsSurvival/blob/main/forestplot_FINAL.R
+   
 
 ## Release notes
 
