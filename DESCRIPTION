@@ -14,6 +14,7 @@ Imports:
     ggplot2,
     gridExtra,
     data.table,
-    dsBaseClient
+    dsBaseClient,
+    survival
 RoxygenNote: 7.1.2
 Encoding: UTF-8
