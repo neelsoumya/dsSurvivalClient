@@ -189,7 +189,7 @@ https://doi.org/10.1101/2022.01.04.471418
 
 
 
-and the following DOI
+<!--and the following DOI
 
 
 [![DOI](https://zenodo.org/badge/362161720.svg)](https://zenodo.org/badge/latestdoi/362161720)
@@ -198,3 +198,4 @@ or see the CITATION.cff file edited using
 
 https://citation-file-format.github.io/cff-initializer-javascript/
 
+-->
