@@ -179,7 +179,7 @@ We are especially grateful to Elaine Smith, Stuart Wheater, Yannick Marcon, Paul
     
 ## Citation
 
-If you use the code, please cite the following manuscript
+If you use the code, please cite the following manuscript:
 
 dsSurvival: Privacy preserving survival models for federated individual patient meta-analysis in DataSHIELD
 
