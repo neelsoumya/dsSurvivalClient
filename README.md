@@ -188,6 +188,10 @@ https://www.biorxiv.org/content/10.1101/2022.01.04.471418v2
 https://doi.org/10.1101/2022.01.04.471418 
 
 
+A bib file is available here:
+
+https://github.com/neelsoumya/dsSurvivalClient/blob/main/CITATION.bib
+
 
 <!--and the following DOI
 
