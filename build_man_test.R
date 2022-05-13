@@ -15,6 +15,7 @@ library(dsBase)
 library(dsBaseClient)
 require('DSI')
 require('DSOpal')
+library(dsSurvivalClient)
 
 ##################
 # build manuals
