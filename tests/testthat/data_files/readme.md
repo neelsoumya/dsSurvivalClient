@@ -1,1 +1,1 @@
-Synthetic data files for testing
+Synthetic data files for testing of dsSurvival
