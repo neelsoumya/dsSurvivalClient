@@ -74,6 +74,11 @@ This uses the Opal demo server which has all server-side packages preinstalled
 https://opal-sandbox.mrc-epid.cam.ac.uk/
 
 
+You can also see the script `simple_script.R`
+
+https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/simple_script.R
+
+
 ## Installation
 
 * Install R Studio and the development environment as described below:
