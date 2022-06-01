@@ -1,5 +1,10 @@
-Citation files
+Vignettes and tutorials
 
-See
 
-https://ropensci.org/blog/2021/02/16/package-citation/
+A tutorial in bookdown format with executable code is available here:
+
+https://neelsoumya.github.io/dsSurvival_bookdown/
+
+and
+
+https://neelsoumya.github.io/dsSurvivalbookdown/
