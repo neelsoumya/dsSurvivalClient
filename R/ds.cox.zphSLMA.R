@@ -88,7 +88,7 @@ ds.cox.zphSLMA <- function(fit = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
       
    # verify that 'fit' was set
@@ -100,7 +100,7 @@ ds.cox.zphSLMA <- function(fit = NULL,
    calltext <- call("cox.zphSLMADS", fit, transform, terms, singledf, global)
 
    # call aggregate function
-   output <- datashield.aggregate(datasources, calltext)
+   output <- DSI::datashield.aggregate(datasources, calltext)
   
    # return summary of coxph model
    return(output)

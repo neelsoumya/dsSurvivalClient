@@ -101,7 +101,7 @@ ds.Surv <- function(time = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
    
    # if the argument 'event' is set, check that the data frame is defined (i.e. exists) on the server site

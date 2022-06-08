@@ -98,7 +98,7 @@ ds.coxph.SLMA <- function(formula = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
    
    # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
@@ -173,7 +173,7 @@ ds.coxph.SLMA <- function(formula = NULL,
    calltext <- call("coxphSLMADS", formula=formula, dataName, weights, init, ties, singular.ok, model, x, y, control)
    
    # call aggregate function
-   output <- datashield.aggregate(datasources, calltext)
+   output <- DSI::datashield.aggregate(datasources, calltext)
   
    # return summary of coxph model
    if (combine_with_metafor == FALSE)

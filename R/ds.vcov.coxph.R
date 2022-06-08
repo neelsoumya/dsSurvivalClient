@@ -16,6 +16,7 @@
 #' @return \code{coxphSummaryDS} returns to the client-side the variance-covariance matrix of
 #' 	the Cox proportional hazards model
 #' @author Soumya Banerjee and Tom RP Bishop, 2021
+#' @import DSI
 #' @examples
 #' \dontrun{
 #'

@@ -75,7 +75,7 @@ ds.coxphSummary <- function(x = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
       
    # verify that 'x' name of Cox model was set
@@ -90,7 +90,7 @@ ds.coxphSummary <- function(x = NULL,
    
 
    # call aggregate function
-   output <- datashield.aggregate(datasources, calltext)
+   output <- DSI::datashield.aggregate(datasources, calltext)
   
    # return summary of coxph model
    return(output)
