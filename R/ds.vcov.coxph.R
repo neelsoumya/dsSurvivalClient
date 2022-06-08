@@ -59,7 +59,7 @@
 #'              dataName = 'D', datasources = connections, 
 #'		objectname = 'coxph_serverside')
 #'   
-#'   dsSurvivalClient::ds.vcov.coxph(x = 'coxph_serverside')
+#'   dsSurvivalClient::ds.vcov.coxph(object = 'coxph_serverside')
 #'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
