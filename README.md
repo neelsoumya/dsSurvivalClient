@@ -8,7 +8,7 @@
 
 A tutorial in bookdown format with executable code is available here:
 
-https://neelsoumya.github.io/dsSurvival_bookdown/
+https://neelsoumya.github.io/dsSurvivalbookdown/
 
 
 
@@ -145,7 +145,7 @@ devtools::install_github('neelsoumya/dsSurvivalClient', ref = 'privacy_survival_
 
 A tutorial in bookdown format is available here: 
 
-https://neelsoumya.github.io/dsSurvival_bookdown/
+https://neelsoumya.github.io/dsSurvivalbookdown/
 
 
 
