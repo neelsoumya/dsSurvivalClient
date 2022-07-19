@@ -72,7 +72,7 @@ ds.survfit <- function(formula = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
          
    # verify that 'formula' was set

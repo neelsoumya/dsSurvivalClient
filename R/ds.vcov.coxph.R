@@ -1,33 +1,22 @@
-#' @title Tests the proportional hazards assumption for a Cox proportional hazards model
-#' @description This function tests the proportional hazards assumption 
+#' @title Returns a variance-covariance matrix for a Cox proportional hazards model
+#' @description This function returns a variance-covariance matrix  
 #'	for a Cox proportional hazards model.
-#' @details This is a function that performs diagnostics on a fitted Cox 
-#' 	proportional hazards model. 
+#' @details This is a function that returns a variance-covariance matrix for a fitted Cox 
+#' 	proportional hazards model that has previously been generated on the server side.
 #' 
-#' Server function called: \code{cox.zphSLMADS}. 
+#' Server function called: \code{vcovDS.coxph}. 
 #' 
-#' @param fit character string (potentially including \code{*} symbol without spaces) 
+#' @param object character string (potentially including \code{*} symbol without spaces) 
 #' specifying the name of the fitted server-side Cox proportioanl hazards model
 #'	 that has been created using ds.coxphSLMAassign()
-#' @param transform character string specifying how the survival times should be transformed
-#' 	before the test is performed. Possible values are "km", "rank", "identity" or a
-#' 	function of one argument.
-#' @param terms logical if TRUE, do a test for each term in the model rather than for each
-#'	separate covariate. For a factor variable with k levels, for instance, this would lead
-#'	to a k-1 degree of freedom test. The plot for such variables will be a single curve
-#'	evaluating the linear predictor over time.
-#' @param singledf logical use a single degree of freedom test for terms that have multiple 
-#'	coefficients, i.e., the test that corresponds most closely to the plot. If terms=FALSE
-#'	this argument has no effect.
-#' @param global logical should a global chi-square test be done, in addition to the per-variable
-#'	or per-term tests tests. 
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' For more information see \strong{Details}. 
-#' @return \code{cox.zphSLMADS} returns to the client-side the diagnostics of
+#' @return \code{coxphSummaryDS} returns to the client-side the variance-covariance matrix of
 #' 	the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2021
+#' @author Soumya Banerjee and Tom RP Bishop, 2021
+#' @import DSI
 #' @examples
 #' \dontrun{
 #'
@@ -67,21 +56,20 @@
 #'
 #'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
-#'             dataName = 'D', datasources = connections)
+#'   dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female', 
+#'              dataName = 'D', datasources = connections, 
+#'		objectname = 'coxph_serverside')
 #'   
+#'   dsSurvivalClient::ds.vcov.coxph(object = 'coxph_serverside')
+#'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
 #' }
 #'
 #' @export
-ds.cox.zphSLMA <- function(fit = NULL,
-			   transform = 'km',
-			   terms = TRUE,
-			   singledf = FALSE,
-			   global = TRUE,
+ds.vcov.coxph <- function(object = NULL,
 			   datasources = NULL
-			  )
+			   )
 {
    
    # look for DS connections
@@ -91,19 +79,21 @@ ds.cox.zphSLMA <- function(fit = NULL,
       datasources <- DSI::datashield.connections_find()
    }
       
-   # verify that 'fit' was set
-   if(is.null(fit))
+   # verify that 'object' name of Cox model was set
+   if(is.null(object))
    {
-      stop(" Please provide a valid name for a server-side Cox proportional hazards model that has been fit to data !", call.=FALSE)
+      stop(" Please provide a valid name for a server-side Cox proportional hazards model that has been fitted to data !", call.=FALSE)
    }
    
-   calltext <- call("cox.zphSLMADS", fit, transform, terms, singledf, global)
+   
+   calltext <- call("vcovDS.coxph", object)
 
    # call aggregate function
    output <- DSI::datashield.aggregate(datasources, calltext)
   
-   # return summary of coxph model
+   # return vcov matrix
    return(output)
 	
 }
-#ds.cox.zphSLMA
+#ds.vcov.coxph
+
