@@ -161,7 +161,7 @@ https://neelsoumya.github.io/dsSurvivalbookdown/
 
 A screenshot of meta-analyzed hazard ratios from a survival model is shown below.
 
-![Meta-analyzed hazard ratios from survival models](screenshot_survival_models.png)
+![Meta-analyzed hazard ratios from survival models](https://github.com/neelsoumya/dsSurvivalClient/blob/main/project/screenshot_survival_models.png)
 
 For polished publication ready plots, use the following script `forestplot_FINAL.R`
 
