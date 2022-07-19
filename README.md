@@ -227,7 +227,7 @@ https://bmcresnotes.biomedcentral.com/articles/10.1186/s13104-022-06085-1
 
 A bib file is available here:
 
-https://github.com/neelsoumya/dsSurvivalClient/blob/main/CITATION.bib
+https://github.com/neelsoumya/dsSurvivalClient/blob/main/project/CITATION.bib
 
 ```bibtex
 @article{Banerjee2022,
