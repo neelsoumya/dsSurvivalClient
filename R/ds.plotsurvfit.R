@@ -86,13 +86,13 @@ ds.plotsurvfit <- function(formula = NULL,
   # if one not provided then get current
   if(is.null(datasources))
   {
-    datasources <- datashield.connections_find()
+    datasources <- DSI::datashield.connections_find()
   }
   
   # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
   if(!(is.null(dataName)))
   {
-    defined <- dsBase:::isDefined(datasources, dataName)
+    defined <- dsBaseClient::ds.exists(datasources, dataName)
   }
   
   # verify that 'formula' was set
@@ -105,11 +105,11 @@ ds.plotsurvfit <- function(formula = NULL,
   calltext <- call("plotsurvfitDS", formula=formula, dataName) #, method_anonymization, noise, knn)
   
   # call aggregate function
-  output <- datashield.aggregate(datasources, calltext)
+  output <- DSI::datashield.aggregate(datasources, calltext)
   
   # Get the required grid according to the number of servers
   nrows_plot <- ceiling(length(output) / 2)
-  if(nrows_plot != 1){par(mfrow=c(nrows_plot, 2))}
+  if(nrows_plot != 1){graphics::par(mfrow=c(nrows_plot, 2))}
   # Plot for each server
   Map(function(x, n) {
     funct <- eval("fun")
@@ -124,7 +124,7 @@ ds.plotsurvfit <- function(formula = NULL,
   }, output, names(output))
 	
   # Reset graphic options to not interfere other plots
-  par(mfrow=c(1,1))
+  graphics::par(mfrow=c(1,1))
   
   # return this privacy preserving plot	
   return(output)
