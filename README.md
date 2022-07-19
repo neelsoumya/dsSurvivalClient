@@ -98,7 +98,7 @@ https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/simple_script
 
 * Install dsBase and dsSurvival on Opal server in the Virtual Machine (type neelsoumya/dsSurvival and main in the textboxes) as shown in the screenshot below
 
-![Screenshot of installation of package in VM](Capture_VM_install_screenshot.PNG)
+![Screenshot of installation of package in VM](https://github.com/neelsoumya/dsSurvivalClient/blob/main/project/Capture_VM_install_screenshot.PNG)
 
 
 Please see the link below on how to install a package in Opal
