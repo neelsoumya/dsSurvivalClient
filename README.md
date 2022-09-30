@@ -69,7 +69,7 @@ install.packages('opalr')
 
 Follow the tutorial in bookdown format with executable code:
 
-https://neelsoumya.github.io/dsSurvival_bookdown/
+https://neelsoumya.github.io/dsSurvivalbookdown/
 
 This uses the Opal demo server which has all server-side packages preinstalled
 
