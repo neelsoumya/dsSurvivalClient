@@ -78,7 +78,7 @@ https://opal-sandbox.mrc-epid.cam.ac.uk/
 
 You can also see the script `simple_script.R`
 
-https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/simple_script.R
+https://github.com/neelsoumya/dsSurvival/blob/main/vignettes/simple_script.R
 
 
 ## Installation
