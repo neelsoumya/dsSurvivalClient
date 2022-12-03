@@ -201,6 +201,7 @@ v2.0.0: This release has privacy preserving survival curves.
 We acknowledge the help and support of the DataSHIELD technical team.
 We are especially grateful to Elaine Smith, Stuart Wheater, Yannick Marcon, Paul Burton, Demetris Avraam, Patricia Ryser-Welch, Kevin Rue-Albrecht, Maria Gomez Vazquez and Wolfgang Viechtbauer for fruitful discussions and feedback.
 
+We thank @joerghenkebuero for suggestions about documentation, @AlanRace and Stefan Buchka for bug fixes and Xavier Escriba Montagut for a fix to the plotting functionality.
 
 ## Contact
 
