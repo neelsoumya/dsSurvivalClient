@@ -69,7 +69,7 @@ install.packages('opalr')
 
 Follow the tutorial in bookdown format with executable code:
 
-https://neelsoumya.github.io/dsSurvival_bookdown/
+https://neelsoumya.github.io/dsSurvivalbookdown/
 
 This uses the Opal demo server which has all server-side packages preinstalled
 
@@ -78,7 +78,7 @@ https://opal-sandbox.mrc-epid.cam.ac.uk/
 
 You can also see the script `simple_script.R`
 
-https://github.com/neelsoumya/dsSurvivalClient/blob/main/vignettes/simple_script.R
+https://github.com/neelsoumya/dsSurvival/blob/main/vignettes/simple_script.R
 
 
 ## Installation
@@ -199,8 +199,9 @@ v2.0.0: This release has privacy preserving survival curves.
 ## Acknowledgements
 
 We acknowledge the help and support of the DataSHIELD technical team.
-We are especially grateful to Elaine Smith, Stuart Wheater, Yannick Marcon, Paul Burton, Demetris Avraam, Patricia Ryser-Welch, Kevin Rue-Albrecht, Maria Gomez Vazquez and Wolfgang Viechtbauer for fruitful discussions and feedback.
+We are especially grateful to Elaine Smith, Eleanor Hyde, Shareen Tan, Stuart Wheater, Yannick Marcon, Paul Burton, Demetris Avraam, Patricia Ryser-Welch, Kevin Rue-Albrecht, Maria Gomez Vazquez and Wolfgang Viechtbauer for fruitful discussions and feedback.
 
+We thank @joerghenkebuero for suggestions about documentation, @AlanRace and Stefan Buchka for bug fixes and Xavier Escriba Montagut for a fix to the plotting functionality.
 
 ## Contact
 
