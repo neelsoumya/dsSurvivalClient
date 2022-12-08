@@ -13,7 +13,8 @@ init.ip.address()
   ds.test_env$server_ip_address = init.ip.address()
   
   #This TCP/IP address is required to test a connect to the server. 
-  ds.test_env$ping_address <- paste("http://", ds.test_env$server_ip_address, ":8080", sep="" )
+  # ds.test_env$ping_address <- paste("http://", ds.test_env$server_ip_address, ":8080", sep="" )
+  ds.test_env$ping_address <- paste("https://", ds.test_env$server_ip_address, ":8443", sep="" )
   
   ds.test_env$ip_address_1 <- ds.test_env$ping_address
   ds.test_env$ip_address_2 <- ds.test_env$ping_address
@@ -26,6 +27,10 @@ init.ip.address()
   ds.test_env$password_1 <- getOption("opal.password", "datashield_test&")
   ds.test_env$password_2 <- getOption("opal.password", "datashield_test&")
   ds.test_env$password_3 <- getOption("opal.password", "datashield_test&")
+
+  ds.test_env$options_1 <- "list(ssl_verifyhost=0, ssl_verifypeer=0)"
+  ds.test_env$options_2 <- "list(ssl_verifyhost=0, ssl_verifypeer=0)"
+  ds.test_env$options_3 <- "list(ssl_verifyhost=0, ssl_verifypeer=0)"
 
   # switch to "DSLiteDriver" to test with DSLite  
   # ds.test_env$driver <- "DSLiteDriver"
