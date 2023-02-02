@@ -92,7 +92,7 @@ ds.plotsurvfit <- function(formula = NULL,
   # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
   if(!(is.null(dataName)))
   {
-    defined <- dsBaseClient::ds.exists(datasources, dataName)
+    defined <- dsBaseClient::ds.exists(dataName, datasources)
   }
   
   # verify that 'formula' was set
