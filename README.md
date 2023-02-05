@@ -197,6 +197,8 @@ v2.0.0: This release has privacy preserving survival curves.
 
 v2.1.1: This has minor fixes.
 
+v2.1.2: This has minor fixes.
+
 
 ## Acknowledgements
 
