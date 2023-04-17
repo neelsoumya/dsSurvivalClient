@@ -175,6 +175,11 @@ If you want to learn the basics of survival models, see the following repository
 https://github.com/neelsoumya/survival_models
 
 
+If you want to learn coding models in DataSHIELD, see the following repository:
+
+https://github.com/neelsoumya/dsMiscellaneous
+
+
 ## Release notes
 
 v1.0.0: A basic release of survival models in DataSHIELD. This release has Cox proportional hazards models, summaries of models, diagnostics and the ability to meta-analyze hazard ratios. There is also capability to generate forest plots of meta-analyzed hazard ratios. This release supports study-level meta-analysis.
