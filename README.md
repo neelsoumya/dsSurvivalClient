@@ -174,6 +174,9 @@ If you want to learn the basics of survival models, see the following repository
 
 https://github.com/neelsoumya/survival_models
 
+If you want to learn coding models in DataSHIELD, see the following repository:
+
+https://github.com/neelsoumya/dsMiscellaneous
 
 ## Release notes
 
