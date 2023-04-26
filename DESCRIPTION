@@ -1,6 +1,6 @@
 Package: dsSurvivalClient
 Title: DataSHIELD Client Functions
-Version: 6.2.0-1
+Version: 6.2.0-2
 Author: Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD Technical team <datashield@newcastle.ac.uk>
 Maintainer: Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD Technical team <datashield@newcastle.ac.uk>
 Description: DataSHIELD client functions for survival models for the client side.
@@ -14,6 +14,7 @@ Imports:
     ggplot2,
     gridExtra,
     data.table,
-    dsBaseClient
-RoxygenNote: 7.1.1
+    dsBaseClient,
+    survminer
+RoxygenNote: 7.2.3
 Encoding: UTF-8

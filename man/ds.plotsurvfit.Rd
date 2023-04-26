@@ -4,7 +4,13 @@
 \alias{ds.plotsurvfit}
 \title{Performs plotting of privacy preserving survival curves.}
 \usage{
-ds.plotsurvfit(formula = NULL, dataName = NULL, fun = NULL, datasources = NULL)
+ds.plotsurvfit(
+  formula = NULL,
+  dataName = NULL,
+  fun = NULL,
+  ggplot = FALSE,
+  datasources = NULL
+)
 }
 \arguments{
 \item{formula}{character string
@@ -12,6 +18,8 @@ ds.plotsurvfit(formula = NULL, dataName = NULL, fun = NULL, datasources = NULL)
 For more information see \strong{Details}.}
 
 \item{dataName}{character string of name of data frame}
+
+\item{ggplot}{If `TRUE`, use survminer::ggsurvplot to plot the survival curves}
 
 \item{datasources}{a list of \code{\link{DSConnection-class}} objects obtained after login. 
 If the \code{datasources} argument is not specified

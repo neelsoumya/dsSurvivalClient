@@ -11,6 +11,7 @@
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
+#' @param ggplot If `TRUE`, use survminer::ggsurvplot to plot the survival curves
 #' @return privacy preserving survival curve from the server side environment.
 #' @author Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD technical team (2021).
 #' @examples
@@ -63,6 +64,7 @@
 ds.plotsurvfit <- function(formula = NULL,
                            dataName = NULL,
                            fun = NULL,
+                           ggplot = FALSE,
                            datasources = NULL)
 {
   
@@ -76,7 +78,7 @@ ds.plotsurvfit <- function(formula = NULL,
   # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
   if(!(is.null(dataName)))
   {
-    defined <- dsBase:::isDefined(datasources, dataName)
+    defined <- dsBaseClient:::isDefined(datasources, dataName)
   }
   
   # verify that 'formula' was set
@@ -103,14 +105,22 @@ ds.plotsurvfit <- function(formula = NULL,
     if (is.null(fun)){	
       funct <- rlang::missing_arg()
     }
-    graphics::plot(x, 
-                   main = paste0('Survival curve of anonymized data \n [', n, ']'),
-                   fun = funct)
-  }, output, names(output))
+    if(ggplot){
+      survminer::ggsurvplot(survminer::surv_summary(x, data = 1)) +
+        ggplot2::ggtitle(paste0('Survival curve of anonymized data \n [', n, ']'))
+    } else {
+      graphics::plot(x, 
+                     main = paste0('Survival curve of anonymized data \n [', n, ']'),
+                     fun = funct)
+    }
+  }, output, names(output)) -> res
   # Reset graphic options to not interfere other plots
   par(mfrow=c(1,1))
-  
-  return(output)
+  if(ggplot){
+    return(res)
+  } else {
+    return(output)
+  }
   
 }
 #ds.plotsurvfit
