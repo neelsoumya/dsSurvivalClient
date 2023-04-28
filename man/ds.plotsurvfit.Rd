@@ -8,10 +8,10 @@ ds.plotsurvfit(
   formula = NULL,
   dataName = NULL,
   fun = NULL,
-  ggplot = FALSE,
   datasources = NULL,
   xlab = "",
-  ylab = ""
+  ylab = "",
+  ggplot = FALSE
 )
 }
 \arguments{
@@ -21,7 +21,6 @@ For more information see \strong{Details}.}
 
 \item{dataName}{character string of name of data frame}
 
-\item{ggplot}{If `TRUE`, use survminer::ggsurvplot to plot the survival curves}
 \item{fun}{optional parameter to have an argument. For example, you can pass 'cloglog' for a log-log survival plot.}
 
 \item{datasources}{a list of \code{\link{DSConnection-class}} objects obtained after login. 
