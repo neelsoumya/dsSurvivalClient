@@ -78,7 +78,8 @@ ds.plotsurvfit <- function(formula = NULL,
                            # noise = 0.03,
                            # knn = 20,
 			   xlab = '',
-			   ylab = ''
+			   ylab = '',
+			   ggplot = FALSE
 			  )
 {
   
@@ -116,18 +117,27 @@ ds.plotsurvfit <- function(formula = NULL,
     if (is.null(fun)){	
       funct <- rlang::missing_arg()
     }
-    graphics::plot(x, 
-                   main = paste0('Survival curve of anonymized data \n [', n, ']'),
-                   fun = funct,
-		   xlab = xlab,
-		   ylab = ylab)
-  }, output, names(output))
+    if(ggplot){
+      survminer::ggsurvplot(survminer::surv_summary(x, data = 1)) +
+        ggplot2::ggtitle(paste0('Survival curve of anonymized data \n [', n, ']'))
+    } else {
+      graphics::plot(x, 
+                     main = paste0('Survival curve of anonymized data \n [', n, ']'),
+                     fun = funct,
+                     xlab = xlab,
+                     ylab = ylab)
+    }
+  }, output, names(output)) -> res
 	
   # Reset graphic options to not interfere other plots
   graphics::par(mfrow=c(1,1))
   
   # return this privacy preserving plot	
-  return(output)
+  if(ggplot){
+    return(res)
+  } else {
+    return(output)
+  }
   
 }
 #ds.plotsurvfit
