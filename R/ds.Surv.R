@@ -28,11 +28,11 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return \code{SurvDS} returns to the client-side a Surv() obejct for use in
 #' the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -77,11 +77,11 @@
 #'             datasources = connections)
 #'
 #'   # create a server-side survival object
-#'   dsBaseClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
+#'   dsSurvivalClient::ds.Surv(time='STARTTIME', time2='ENDTIME', 
 #'			   event = 'EVENT', objectname='surv_object')
 #'
 #'   # create a Cox proportional hazards model using the created survival object	
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
 #'   
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -101,7 +101,7 @@ ds.Surv <- function(time = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
    
    # if the argument 'event' is set, check that the data frame is defined (i.e. exists) on the server site
@@ -110,9 +110,7 @@ ds.Surv <- function(time = NULL,
       # TODO: cannot find function isDefined but is is inds.glmerSLMA
       # defined <- isDefined(datasources, event)
    }
-   
-   # ds.assign(toAssign = "survival::Surv(time=SURVTIME,event=EVENT)", newobj = "surv_object", datasources = connections)
-   
+      
    # verify that 'time' was set
    if(is.null(time))
    {
@@ -139,29 +137,11 @@ ds.Surv <- function(time = NULL,
 
    
    # call the server side function
-   #cat("On client side: \n")
-   #cat("\n")
-   # TODO: include type and origin
-   # TODO: rename start to time and stop to time2 and change order time, event, time2	
    calltext <- call("SurvDS", time, time2, event, type, origin) # SurvDS
    
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
-
    # call aggregate function
-   # output <- datashield.aggregate(datasources, calltext)
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
-   # ds.assign(toAssign = calltext, newobj = 'surv_object', datasources = datasources)
-   
-   # output <- datashield.assign(conns = datasources, symbol = 'surv_object',
-   #                             value = calltext)
-   
-   # ds.assign(toAssign = 'D$female', newobj = 'E', datasources = connections)
-   # ds.assign(toAssign = 'D$female', newobj = 'surv_object', datasources = datasources)
-   # ds.assign(toAssign = 'SurvDS(', newobj = 'surv_object', datasources = datasources)
+ 
    # return summary of coxph model
    # output <- NULL
    return(output)

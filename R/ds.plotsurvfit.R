@@ -1,6 +1,6 @@
-#' @title Performs plotting of privacy preserving survival curves. 
+#' @title Performs plotting of privacy preserving survival curves in DataSHIELD. 
 #' @description Performs plotting of privacy preserving survival curves. 
-#' @details This is a function that performs plotting of privacy preserving survival curves.
+#' @details This is a server-side function that plots privacy preserving survival curves in DataSHIELD.
 #' 
 #' Server function called: \code{plotsurvfitDS}. 
 #' 
@@ -8,22 +8,25 @@
 #' 	specifying the name of survfit object on the server-side created using ds.survfit().
 #' For more information see \strong{Details}. 
 #' @param dataName character string of name of data frame
+#' @param fun optional parameter to have an argument. For example, you can pass 'cloglog' for a log-log survival plot.
 #' @param datasources a list of \code{\link{DSConnection-class}} objects obtained after login. 
 #' If the \code{datasources} argument is not specified
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
-#' @param ggplot If `TRUE`, use survminer::ggsurvplot to plot the survival curves
+#' @param xlab X-axis label, a character string. Default value is ''.
+#' @param ylab Y-axis label, a character string. Default value is ''.
 #' @return privacy preserving survival curve from the server side environment.
-#' @author Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD technical team (2021).
+#' @author Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom RP Bishop (2022).
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 2.0
 #'   
 #'   # connecting to the Opal servers
 #' 
 #'   require('DSI')
 #'   require('DSOpal')
 #'   require('dsBaseClient')
+#'   library(dsSurvivalClient)
 #'
 #'   builder <- DSI::newDSLoginBuilder()
 #'   builder$append(server = "study1", 
@@ -51,10 +54,16 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
 #'             dataName = 'D', datasources = connections)
+#'
+#'   dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+#'
+#'   dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
+#'
+#'   dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object', fun = 'cloglog')
 #'   
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -64,21 +73,26 @@
 ds.plotsurvfit <- function(formula = NULL,
                            dataName = NULL,
                            fun = NULL,
-                           ggplot = FALSE,
-                           datasources = NULL)
+                           datasources = NULL,
+                           # method_anonymization = 2,
+                           # noise = 0.03,
+                           # knn = 20,
+			   xlab = '',
+			   ylab = ''
+			  )
 {
   
   # look for DS connections
   # if one not provided then get current
   if(is.null(datasources))
   {
-    datasources <- datashield.connections_find()
+    datasources <- DSI::datashield.connections_find()
   }
   
   # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
   if(!(is.null(dataName)))
   {
-    defined <- dsBaseClient:::isDefined(datasources, dataName)
+    defined <- dsBaseClient::ds.exists(dataName, datasources)
   }
   
   # verify that 'formula' was set
@@ -87,40 +101,33 @@ ds.plotsurvfit <- function(formula = NULL,
     stop(" Please provide a valid survival formula!", call.=FALSE)
   }
   
-  
-  calltext <- call("plotsurvfitDS", formula=formula, dataName) #, weights, init, ties, singular.ok, model, x, y, control)
+  # call the server side function
+  calltext <- call("plotsurvfitDS", formula=formula, dataName) #, method_anonymization, noise, knn)
   
   # call aggregate function
-  output <- datashield.aggregate(datasources, calltext)
-  
-  # TODO: other arguments 
-  #	https://www.rdocumentation.org/packages/survival/versions/3.2-7/topics/plot.survfit
+  output <- DSI::datashield.aggregate(datasources, calltext)
   
   # Get the required grid according to the number of servers
   nrows_plot <- ceiling(length(output) / 2)
-  if(nrows_plot != 1){par(mfrow=c(nrows_plot, 2))}
+  if(nrows_plot != 1){graphics::par(mfrow=c(nrows_plot, 2))}
   # Plot for each server
   Map(function(x, n) {
     funct <- eval("fun")
     if (is.null(fun)){	
       funct <- rlang::missing_arg()
     }
-    if(ggplot){
-      survminer::ggsurvplot(survminer::surv_summary(x, data = 1)) +
-        ggplot2::ggtitle(paste0('Survival curve of anonymized data \n [', n, ']'))
-    } else {
-      graphics::plot(x, 
-                     main = paste0('Survival curve of anonymized data \n [', n, ']'),
-                     fun = funct)
-    }
-  }, output, names(output)) -> res
+    graphics::plot(x, 
+                   main = paste0('Survival curve of anonymized data \n [', n, ']'),
+                   fun = funct,
+		   xlab = xlab,
+		   ylab = ylab)
+  }, output, names(output))
+	
   # Reset graphic options to not interfere other plots
-  par(mfrow=c(1,1))
-  if(ggplot){
-    return(res)
-  } else {
-    return(output)
-  }
+  graphics::par(mfrow=c(1,1))
+  
+  # return this privacy preserving plot	
+  return(output)
   
 }
 #ds.plotsurvfit

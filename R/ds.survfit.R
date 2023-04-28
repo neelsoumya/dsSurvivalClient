@@ -16,11 +16,11 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return \code{SurvDS} returns to the client-side a Surv() obejct for use in
 #' the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 2.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -54,9 +54,9 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
-#'   dsBaseClient::ds.survfit(formula='surv_object',object='survfit_object')   
+#'   dsSurvivalClient::ds.Surv('SURVTIME', 'EVENT', 'surv_object')
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object~D$age+D$female')
+#'   dsSurvivalClient::ds.survfit(formula='surv_object',object='survfit_object')   
 #'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -72,7 +72,7 @@ ds.survfit <- function(formula = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
          
    # verify that 'formula' was set
@@ -110,23 +110,9 @@ ds.survfit <- function(formula = NULL,
    # construct call to call()	
    calltext <- call("survfitDS", formula)
    
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
-
    # call aggregate function
-   # output <- datashield.aggregate(datasources, calltext)
    output <- DSI::datashield.assign(conns = datasources, value = calltext, symbol = objectname) # 'surv_object') 
-   # ds.assign(toAssign = calltext, newobj = 'surv_object', datasources = datasources)
-   
-   # output <- datashield.assign(conns = datasources, symbol = 'surv_object',
-   #                             value = calltext)
-   
-   # ds.assign(toAssign = 'D$female', newobj = 'E', datasources = connections)
-   # ds.assign(toAssign = 'D$female', newobj = 'surv_object', datasources = datasources)
-   # ds.assign(toAssign = 'SurvDS(', newobj = 'surv_object', datasources = datasources)
+
    # return summary of coxph model
    # output <- NULL
    return(output)

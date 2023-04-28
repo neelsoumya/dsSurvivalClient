@@ -25,7 +25,7 @@ context("vm-test::_::tests::vm")
 
 test_that("The virtual machine is loaded. ",
 {
-    response <- httr::HEAD(url=ds.test_env$ping_address, config=config(timeout=5))
+    response <- httr::HEAD(url=ds.test_env$ping_address, config=config(timeout=5, ssl_verifyhost=0, ssl_verifypeer=0))
     expect_equal(http_status(response)$reason, "OK")
 })
 

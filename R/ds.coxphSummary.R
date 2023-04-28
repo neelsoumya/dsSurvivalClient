@@ -15,11 +15,11 @@
 #' For more information see \strong{Details}. 
 #' @return \code{coxphSummaryDS} returns to the client-side the summary of
 #' 	the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom RP Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -53,13 +53,13 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female', 
 #'              dataName = 'D', datasources = connections, 
 #'		objectname = 'coxph_serverside')
 #'   
-#'   dsBaseClient::ds.coxphSummary(x = 'coxph_serverside')
+#'   dsSurvivalClient::ds.coxphSummary(x = 'coxph_serverside')
 #'
 #'   # clear the Datashield R sessions and logout
 #'   datashield.logout(connections)
@@ -75,7 +75,7 @@ ds.coxphSummary <- function(x = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
       
    # verify that 'x' name of Cox model was set
@@ -85,22 +85,12 @@ ds.coxphSummary <- function(x = NULL,
    }
    
    
-   # call the server side function
-   # cat("On client side: \n")
-	
-   #cat(search.filter)
-   #cat("\n")
    calltext <- call("coxphSummaryDS", x)
    # calltext <- call("coxphSLMADS",search.filter=stats::as.formula(search.filter), dataName)
    
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
 
    # call aggregate function
-   output <- datashield.aggregate(datasources, calltext)
+   output <- DSI::datashield.aggregate(datasources, calltext)
   
    # return summary of coxph model
    return(output)

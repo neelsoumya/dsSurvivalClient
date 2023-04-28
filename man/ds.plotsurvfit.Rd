@@ -2,14 +2,16 @@
 % Please edit documentation in R/ds.plotsurvfit.R
 \name{ds.plotsurvfit}
 \alias{ds.plotsurvfit}
-\title{Performs plotting of privacy preserving survival curves.}
+\title{Performs plotting of privacy preserving survival curves in DataSHIELD.}
 \usage{
 ds.plotsurvfit(
   formula = NULL,
   dataName = NULL,
   fun = NULL,
   ggplot = FALSE,
-  datasources = NULL
+  datasources = NULL,
+  xlab = "",
+  ylab = ""
 )
 }
 \arguments{
@@ -20,10 +22,15 @@ For more information see \strong{Details}.}
 \item{dataName}{character string of name of data frame}
 
 \item{ggplot}{If `TRUE`, use survminer::ggsurvplot to plot the survival curves}
+\item{fun}{optional parameter to have an argument. For example, you can pass 'cloglog' for a log-log survival plot.}
 
 \item{datasources}{a list of \code{\link{DSConnection-class}} objects obtained after login. 
 If the \code{datasources} argument is not specified
 the default set of connections will be used: see \code{\link{datashield.connections_default}}.}
+
+\item{xlab}{X-axis label, a character string. Default value is ''.}
+
+\item{ylab}{Y-axis label, a character string. Default value is ''.}
 }
 \value{
 privacy preserving survival curve from the server side environment.
@@ -32,20 +39,21 @@ privacy preserving survival curve from the server side environment.
 Performs plotting of privacy preserving survival curves.
 }
 \details{
-This is a function that performs plotting of privacy preserving survival curves.
+This is a server-side function that plots privacy preserving survival curves in DataSHIELD.
 
 Server function called: \code{plotsurvfitDS}.
 }
 \examples{
 \dontrun{
 
-  ## Version 6
+  ## Version 2.0
   
   # connecting to the Opal servers
 
   require('DSI')
   require('DSOpal')
   require('dsBaseClient')
+  library(dsSurvivalClient)
 
   builder <- DSI::newDSLoginBuilder()
   builder$append(server = "study1", 
@@ -73,10 +81,16 @@ Server function called: \code{plotsurvfitDS}.
             newobj = "SURVTIME",
             datasources = connections)
 
-  dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+  dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 
-  dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+  dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
             dataName = 'D', datasources = connections)
+
+  dsSurvivalClient::ds.survfit(formula='surv_object~1', objectname='survfit_object')
+
+  dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object')
+
+  dsSurvivalClient::ds.plotsurvfit(formula = 'survfit_object', fun = 'cloglog')
   
   # clear the Datashield R sessions and logout
   datashield.logout(connections)
@@ -84,5 +98,5 @@ Server function called: \code{plotsurvfitDS}.
 
 }
 \author{
-Soumya Banerjee, Tom Bishop, Demetris Avraam, Paul Burton and DataSHIELD technical team (2021).
+Soumya Banerjee, Demetris Avraam, Paul Burton, Xavier Escriba-Montagut, Juan Gonzalez and Tom RP Bishop (2022).
 }

@@ -29,11 +29,11 @@
 #' @param objectname character name of server-side variable to store the 
 #'     Cox model
 #' @return NULL
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -67,12 +67,12 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
 #'             dataName = 'D', datasources = connections)
 #'
-#'   dsBaseClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female',
+#'   dsSurvivalClient::ds.coxphSLMAassign(formula = 'surv_object ~  D$female',
 #'              dataName = 'D', datasources = connections,
 #'              objectname = 'coxph_serverside')
 #'   
@@ -99,7 +99,7 @@ ds.coxphSLMAassign <- function(formula = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
    
    # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
@@ -121,8 +121,6 @@ ds.coxphSLMAassign <- function(formula = NULL,
       stop(" Please provide a valid objectname (character) to store the Cox model", call.=FALSE)
    } 
    
-   # call the server side function
-   # cat("On client side: \n")
    #search.filter=stats::as.formula(search.filter)
    formula = stats::as.formula(formula)
    
@@ -180,20 +178,11 @@ ds.coxphSLMAassign <- function(formula = NULL,
 	control <- stats::as.formula(control)   
    }	   
 	
-	
-   #cat(search.filter)
-   #cat("\n")
-   calltext <- call("coxphSLMAassignDS", formula=formula, dataName, weights, init, ties, singular.ok, model, x, y, control)
-   # calltext <- call("coxphSLMADS",search.filter=stats::as.formula(search.filter), dataName)
-   
-   #cat("\n Class of calltext\n")
-   #cat(class(calltext))
-   #cat("\n What is in calltext ? \n")
-   #cat(as.character(calltext))
-   #cat("\n End of function \n")	
 
+   calltext <- call("coxphSLMAassignDS", formula=formula, dataName, weights, init, ties, singular.ok, model, x, y, control)
+   
    # call assign function
-   output <- datashield.assign(conns = datasources, 
+   output <- DSI::datashield.assign(conns = datasources, 
                                value = calltext,
                                symbol = objectname)
   

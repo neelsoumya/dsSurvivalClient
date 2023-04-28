@@ -56,7 +56,7 @@ Server function called: \code{cox.zphSLMADS}.
 \examples{
 \dontrun{
 
-  ## Version 6
+  ## Version 1.0.0
   
   # connecting to the Opal servers
 
@@ -90,9 +90,9 @@ Server function called: \code{cox.zphSLMADS}.
             newobj = "SURVTIME",
             datasources = connections)
 
-  dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+  dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 
-  dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+  dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
             dataName = 'D', datasources = connections)
   
   # clear the Datashield R sessions and logout
@@ -101,5 +101,5 @@ Server function called: \code{cox.zphSLMADS}.
 
 }
 \author{
-Soumya Banerjee and Tom Bishop, 2020
+Soumya Banerjee and Tom Bishop, 2021
 }

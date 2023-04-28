@@ -32,11 +32,11 @@
 #' the default set of connections will be used: see \code{\link{datashield.connections_default}}.
 #' @return \code{coxphSLMADS} returns to the client-side a summary of 
 #' the Cox proportional hazards model
-#' @author Soumya Banerjee and Tom Bishop, 2020
+#' @author Soumya Banerjee and Tom Bishop, 2021
 #' @examples
 #' \dontrun{
 #'
-#'   ## Version 6
+#'   ## Version 1.0.0
 #'   
 #'   # connecting to the Opal servers
 #' 
@@ -70,9 +70,9 @@
 #'             newobj = "SURVTIME",
 #'             datasources = connections)
 #'
-#'   dsBaseClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
+#'   dsSurvivalClient::ds.Surv(time='SURVTIME', event='EVENT', objectname='surv_object')
 #'
-#'   dsBaseClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
+#'   dsSurvivalClient::ds.coxph.SLMA(formula = 'surv_object ~  D$female', 
 #'             dataName = 'D', datasources = connections)
 #'   
 #'   # clear the Datashield R sessions and logout
@@ -98,7 +98,7 @@ ds.coxph.SLMA <- function(formula = NULL,
    # if one not provided then get current
    if(is.null(datasources))
    {
-      datasources <- datashield.connections_find()
+      datasources <- DSI::datashield.connections_find()
    }
    
    # if the argument 'dataName' is set, check that the data frame is defined (i.e. exists) on the server site
@@ -173,7 +173,7 @@ ds.coxph.SLMA <- function(formula = NULL,
    calltext <- call("coxphSLMADS", formula=formula, dataName, weights, init, ties, singular.ok, model, x, y, control)
    
    # call aggregate function
-   output <- datashield.aggregate(datasources, calltext)
+   output <- DSI::datashield.aggregate(datasources, calltext)
   
    # return summary of coxph model
    if (combine_with_metafor == FALSE)
@@ -217,7 +217,7 @@ ds.coxph.SLMA <- function(formula = NULL,
        for (k in 1:numstudies)
        {
            betamatrix[,k] <- output[[k]]$coefficients[,1]
-           sematrix[,k]   <- output[[k]]$coefficients[,2]
+           sematrix[,k]   <- output[[k]]$coefficients[,3]
        }
 	   
        # create a list to store all RMA metafor values
