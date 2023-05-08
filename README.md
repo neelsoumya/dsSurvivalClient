@@ -169,6 +169,10 @@ For polished publication ready plots, use the following script `forestplot_FINAL
 
    https://github.com/neelsoumya/dsSurvival/blob/main/forestplot_FINAL.R
    
+or the script `simple_script.R`
+
+https://github.com/neelsoumya/dsSurvival/blob/main/vignettes/simple_script.R
+
 
 If you want to learn the basics of survival models, see the following repository:
 
@@ -203,6 +207,8 @@ v2.0.0: This release has privacy preserving survival curves.
 v2.1.1: This has minor fixes.
 
 v2.1.2: This has minor fixes.
+
+v2.1.3: This has minor fixes and fixes for plotting of a stratified survival analysis.
 
 
 ## Acknowledgements
