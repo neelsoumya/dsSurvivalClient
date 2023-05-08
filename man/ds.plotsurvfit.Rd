@@ -10,7 +10,8 @@ ds.plotsurvfit(
   fun = NULL,
   datasources = NULL,
   xlab = "",
-  ylab = ""
+  ylab = "",
+  ggplot = FALSE
 )
 }
 \arguments{
