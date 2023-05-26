@@ -18,8 +18,7 @@ ds.life.table <- function(survfit_object, datasources = NULL){
   if(names(res[[1]][1]) == "life.table_no_strata"){
     df_list <- purrr::flatten(res)
     combined_df <- dplyr::bind_rows(df_list)
-    filtered_df <- .compute_survival_rates(combined_df)
-    plot_survival_curves(filtered_df)
+    merged_df <- .compute_survival_rates(combined_df)
   } else {
     df_list <- purrr::flatten(res)
     # First, create a list where each element is a list of data frames with the same name
@@ -35,8 +34,8 @@ ds.life.table <- function(survfit_object, datasources = NULL){
     
     # Merge the data frames and add a 'strata' column
     merged_df <- dplyr::bind_rows(combined_dfs_t)
-    plot_survival_curves(merged_df, "strata")
   }
+  return(merged_df)
 }
 
 #' Compute Survival Rates
@@ -78,33 +77,4 @@ ds.life.table <- function(survfit_object, datasources = NULL){
     strata = strata_value
   ), filtered_df)
   return(filtered_df)
-}
-
-#' Plot Survival Curves
-#'
-#' This function plots the survival curves using ggplot2 and geom_step.
-#' It takes a dataframe resulting from a survival analysis and an optional grouping variable for stratified plots.
-#'
-#' @param surv_df A dataframe from survival analysis, must contain 'time', 'surv', 'upper', 'lower' columns.
-#' @param group_col (Optional) A character string specifying the column name in surv_df for stratified plots.
-#'
-#' @return A ggplot2 object representing the survival curves.
-#' @export
-#' @examples
-#' df <- data.frame(time = c(1,2,3), surv = c(0.8, 0.6, 0.4), upper = c(0.9, 0.7, 0.5), lower = c(0.7, 0.5, 0.3), group = c('A', 'B', 'A'))
-#' plot_survival_curves(df, 'group')
-plot_survival_curves <- function(surv_df, group_col = NULL) {
-  if(!is.null(group_col)) {
-    plot <- ggplot2::ggplot(surv_df, ggplot2::aes(x = time, y = surv, color = .data[[group_col]])) +
-      ggplot2::geom_step() +
-      ggplot2::theme_minimal() +
-      ggplot2::labs(x = "Time", y = "Survival probability", color = group_col) +
-      ggplot2::theme(legend.title = ggplot2::element_text(size = 10), legend.text = ggplot2::element_text(size = 10))
-  } else {
-    plot <- ggplot2::ggplot(surv_df, ggplot2::aes(x = time, y = surv)) +
-      ggplot2::geom_step() +
-      ggplot2::theme_minimal() +
-      ggplot2::labs(x = "Time", y = "Survival probability")
-  }
-  return(plot)
 }
